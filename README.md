@@ -24,6 +24,7 @@
 | [第 16 章：矩阵乘优化贯穿案例](chapters/ch16-matmul-case/README.md) | 朴素、共享分块、双输出与可选 cuBLAS | 三个手写版本通过；cuBLAS 缺依赖未测 |
 | [第 17 章：Stream、Event 与处理流水线](chapters/ch17-stream-pipeline/README.md) | 1/2/4 槽批处理、Event 依赖与合并 | CPU 对照通过；实际重叠未测 |
 | [第 18 章：重复任务、CUDA Graphs 与内存池](chapters/ch18-graphs-memory-pool/README.md) | 两段 kernel 重放、Graph、流顺序分配 | CPU 对照通过；性能待空闲复测 |
+| [第 19 章：组织 CUDA C++ 工程](chapters/ch19-cuda-project/README.md) | 静态库、跨文件设备链接、异步接口 | 独立及根工程构建和 CPU 对照通过 |
 
 其余大纲章节正在编写。逐章现有素材与缺口见 [覆盖核对](coverage.md)。
 
@@ -72,6 +73,7 @@ cuda-guide/
     ch16-matmul-case/
     ch17-stream-pipeline/
     ch18-graphs-memory-pool/
+    ch19-cuda-project/
   pilot/
     ch02-thread-indexing/
     ...
@@ -99,7 +101,7 @@ ctest --test-dir build/outline --output-on-failure
 
 本机 GPU 为 RTX 5060 Ti（计算能力 12.0），驱动 595.84，nvcc 12.8.93，GCC 13.3.0，CMake 3.28.3。nvcc 未加入默认 PATH，因此使用绝对路径。其他机器需重新选择工具路径与目标架构。没有自动安装或升级驱动、CUDA 或依赖。
 
-当前统一验证：31 项通过，1 项因没有第二块 GPU 跳过，0 项失败。不能把 CTest 的“100% tests passed”解释成双卡也通过。详情见 [全书验证记录](results/validation.md) 和各章 results/validation.md。
+当前统一验证：32 项通过，1 项因没有第二块 GPU 跳过，0 项失败。不能把 CTest 的“100% tests passed”解释成双卡也通过。详情见 [全书验证记录](results/validation.md) 和各章 results/validation.md。
 
 ## 图像结果
 
@@ -121,7 +123,7 @@ python3 scripts/render_images.py
 
 ## 范围、来源与尚未验证的部分
 
-原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前正式正文已写至第 18 章；部分工具、依赖与性能路径仍未验证；先前 10 章压缩初版保留在 pilot/，章节安排与原大纲不一致。逐章差距见 [覆盖核对](coverage.md)。当前工作目录未发现适用的 AGENTS.md。
+原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前正式正文已写至第 19 章；部分工具、依赖与性能路径仍未验证；先前 10 章压缩初版保留在 pilot/，章节安排与原大纲不一致。逐章差距见 [覆盖核对](coverage.md)。当前工作目录未发现适用的 AGENTS.md。
 
 pilot 提供可运行的入门应用示例，38 章正文仍在编写。共享内存和归约已有示例；Tensor Core、cuBLAS/cuDNN 集成、一般仿射旋转、P2P、NCCL/MPI 只保留适用的扩展说明，没有冒充实现或实测。
 

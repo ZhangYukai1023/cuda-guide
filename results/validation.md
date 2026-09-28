@@ -211,3 +211,9 @@ GPU 上有其他任务，Nsight Systems 不可用。当前不能依据墙钟差�
 2026-09-28 第 18 章独立配置、构建和 CTest 1/1 通过；普通提交、Graph 重放及流顺序分配路径均通过 CPU 逐项对照。根 `build/outline` 重新配置、全目标构建与完整 CTest 32 项中 31 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.07 秒。原始计时与限制见[章节记录](../chapters/ch18-graphs-memory-pool/results/validation.md)。
 
 Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不作稳定性能结论；内存池只验证生命周期，未测分配开销收益。
+
+## 第 19 章加入后的验证
+
+2026-09-28 第 19 章独立配置、构建、设备链接与 CTest 1/1 通过；1003 项和 7 项仿射变换通过 CPU 对照，重复入队、超容量和零长度接口按预期处理。根 `build/outline` 重新配置、全目标构建与完整 CTest 33 项中 32 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.20 秒。详见[章节记录](../chapters/ch19-cuda-project/results/validation.md)。
+
+静态库设备链接已实测；Driver API、NVRTC 和动态库仅在正文说明位置，未实现或验证。

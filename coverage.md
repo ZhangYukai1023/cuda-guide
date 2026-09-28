@@ -22,7 +22,7 @@
 | 16 矩阵乘优化贯穿案例 | [正式第 16 章](chapters/ch16-matmul-case/README.md)；[pilot GEMM](pilot/ch08-ai-operators/README.md) | 三种手写版本通过 CPU 对照；cuBLAS 缺开发库未测，性能待空闲复测 |
 | 17 Stream、Event 与流水线 | [正式第 17 章](chapters/ch17-stream-pipeline/README.md)；[pilot 流水线](pilot/ch07-image-pipeline/README.md) | 1/2/4 槽正确性与事件依赖通过；Nsight 缺失，实际重叠时间线未测 |
 | 18 CUDA Graphs 与内存池 | [正式第 18 章](chapters/ch18-graphs-memory-pool/README.md) | Graph 与流顺序分配正确性通过；并发负载下性能待空闲复测 |
-| 19 组织 CUDA C++ 工程 | [现有 CMake 工程](CMakeLists.txt) | 模块化、接口、独立构建与分发 |
+| 19 组织 CUDA C++ 工程 | [正式第 19 章](chapters/ch19-cuda-project/README.md)；[根 CMake](CMakeLists.txt) | 多文件静态库、跨文件设备链接、接口错误路径已通过；Driver/NVRTC 与动态库未实现 |
 | 20 测试、部署与性能回归 | [现有 CTest](CMakeLists.txt) | 回归基线、部署矩阵与验收流程 |
 | 21 像素、通道与布局 | [图像公共代码](common/image_support.hpp) | 多通道、布局、逐像素操作 |
 | 22 均值与高斯滤波 | [现有第 5 章均值滤波](pilot/ch05-image-filtering/README.md) | 高斯滤波及对照 |

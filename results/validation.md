@@ -269,3 +269,7 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 ## 第 31 章加入后的验证
 
 2026-09-28 第 31 章普通 CUDA 路径独立构建及 CTest 1/1 通过；稠密 GEMV、CSR SpMV 和混合式 CG 与 CPU/已知解参考一致。三种库开发文件缺失，原 cuBLAS/cuSPARSE/cuSOLVER 目标未构建。根工程重新配置、全目标构建和 CTest 44 项中 43 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 4.24 秒。具体误差和库路径限制见[章节记录](../chapters/ch31-linear-sparse-solvers/results/validation.md)。
+
+## 第 32 章加入后的验证
+
+2026-09-28 第 32 章普通 CUDA 直接 DFT 路径独立构建及 CTest 1/1 通过；8 点频谱与往返、64 点低通、补零线性卷积均与 CPU/解析参考相符。cuFFT 开发文件缺失，原库目标未构建或运行。根工程重新配置、全目标构建及 CTest 45 项中 44 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 4.33 秒。误差与未测范围见[章节记录](../chapters/ch32-fft-frequency/results/validation.md)。

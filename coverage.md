@@ -35,7 +35,7 @@
 | 29 Tensor Core、GEMM、CUTLASS | [正式第 29 章](chapters/ch29-tensor-core-cutlass/README.md)；[pilot GEMM](pilot/ch08-ai-operators/README.md) | 朴素与 WMMA 数值对照通过；cuBLAS 开发库和 CUTLASS 缺失，实际指令与性能未验证 |
 | 30 Attention 与推理 | [正式第 30 章](chapters/ch30-attention-inference/README.md) | 显式/在线前向六组输入通过 CPU 对照；框架对照、反向、KV Cache、量化与高性能实现未做 |
 | 31 线性代数与稀疏求解 | [正式第 31 章](chapters/ch31-linear-sparse-solvers/README.md) | 普通 CUDA 稠密/CSR 与混合式 CG 通过 CPU 对照；库 GEMV/SpMV/LU/CG 缺依赖未测 |
-| 32 FFT 与频域计算 | 无 | 全章 |
+| 32 FFT 与频域计算 | [正式第 32 章](chapters/ch32-fft-frequency/README.md) | 直接 DFT/低通/线性卷积通过参考对照；cuFFT 缺开发库，批处理、R2C 和二维库路径未测 |
 | 33 Stencil、PDE、热传导 | [现有第 9 章](pilot/ch09-scientific-computing/README.md) | 更完整的稳定性、边界与误差分析 |
 | 34 随机计算与粒子模拟 | 无 | 全章 |
 | 35 单机多 GPU | [现有第 10 章](pilot/ch10-multi-gpu/README.md) | 真正双卡路径待具备设备时验证 |

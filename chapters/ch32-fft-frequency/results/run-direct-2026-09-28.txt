@@ -1,0 +1,6 @@
+impulse spectrum n=8 max_abs_error=0 PASS
+signal spectrum n=8 max_abs_error=3.66568566e-06 PASS
+signal roundtrip n=8 max_abs_error=5.77725586e-07 PASS
+lowpass k<=8 n=64 max_abs_error=1.257658e-05 PASS
+linear convolution padded16 n=16 max_abs_error=1.08927488e-05 PASS
+chapter 32 direct frequency: PASS

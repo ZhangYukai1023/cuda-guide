@@ -1,0 +1,13 @@
+M=2 N=2 K=3 variant=naive median_ms=0.0031 max_abs_error=0 mismatches=0 PASS
+M=2 N=2 K=3 variant=shared_tile median_ms=0.0031 max_abs_error=0 mismatches=0 PASS
+M=2 N=2 K=3 variant=two_register_outputs median_ms=0.0030 max_abs_error=0 mismatches=0 PASS
+M=2 N=2 K=3 variant=cublas_sgemm SKIP: cuBLAS development library unavailable
+M=65 N=37 K=19 variant=naive median_ms=0.0032 max_abs_error=0 mismatches=0 PASS
+M=65 N=37 K=19 variant=shared_tile median_ms=0.0031 max_abs_error=0 mismatches=0 PASS
+M=65 N=37 K=19 variant=two_register_outputs median_ms=0.0032 max_abs_error=0 mismatches=0 PASS
+M=65 N=37 K=19 variant=cublas_sgemm SKIP: cuBLAS development library unavailable
+M=256 N=256 K=256 variant=naive median_ms=0.0340 max_abs_error=0 mismatches=0 PASS
+M=256 N=256 K=256 variant=shared_tile median_ms=0.0236 max_abs_error=0 mismatches=0 PASS
+M=256 N=256 K=256 variant=two_register_outputs median_ms=0.0154 max_abs_error=0 mismatches=0 PASS
+M=256 N=256 K=256 variant=cublas_sgemm SKIP: cuBLAS development library unavailable
+chapter 16 matmul comparison: PASS

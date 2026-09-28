@@ -193,3 +193,9 @@ The following tests did not run:
 2026-09-28 第 15 章独立配置、构建和 CTest 1/1 通过；两种输入分布、两类任务、两种策略、三种 Block 大小合计 24 组均通过 GPU/CPU 精确对照，并保存完整 stdout。根 `build/outline` 重新配置、全目标构建与完整 CTest 29 项中 28 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 2.76 秒。详见[章节记录](../chapters/ch15-execution-resources/results/validation.md)。
 
 报告的 Occupancy 是 API 预测上限，非 profiler 实测；GPU 同时运行其他任务，Event 时间不能用于可靠性能排名。Nsight 指标未测。
+
+## 第 16 章加入后的验证
+
+2026-09-28 第 16 章独立配置、构建和 CTest 1/1 通过；三个形状上的朴素、共享分块和双输出 GEMM 共 9 个 GPU 结果均与 CPU double 参考符合。根 `build/outline` 重新配置、全目标构建与完整 CTest 30 项中 29 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 2.86 秒。完整 stdout 与限制见[章节记录](../chapters/ch16-matmul-case/results/validation.md)。
+
+cuBLAS 开发库缺失，SGEMM 分支未编译或运行；性能测量时 GPU 有并发任务，当前时间不能用于可信的手写版本排名，也没有库对照结论。

@@ -265,3 +265,7 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 ## 第 30 章加入后的验证
 
 2026-09-28 第 30 章独立配置、构建及 CTest 1/1 通过；六组序列长度、因果模式和数值范围各跑显式与在线路径，合计 12 组输出通过 CPU double 对照。根工程重新配置、全目标构建及 CTest 43 项中 42 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 4.14 秒。原始输出、数值误差及未验证范围见[章节记录](../chapters/ch30-attention-inference/results/validation.md)。未测稳定性能、峰值显存及框架同语义对照。
+
+## 第 31 章加入后的验证
+
+2026-09-28 第 31 章普通 CUDA 路径独立构建及 CTest 1/1 通过；稠密 GEMV、CSR SpMV 和混合式 CG 与 CPU/已知解参考一致。三种库开发文件缺失，原 cuBLAS/cuSPARSE/cuSOLVER 目标未构建。根工程重新配置、全目标构建和 CTest 44 项中 43 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 4.24 秒。具体误差和库路径限制见[章节记录](../chapters/ch31-linear-sparse-solvers/results/validation.md)。

@@ -1,0 +1,4 @@
+dense row-major GEMV 3x3: PASS (14,23,27)
+CSR SpMV n=32 nnz=94 max_abs_error=3.52859497e-07 PASS
+hybrid CG n=32 iterations=11 true_relative_residual=3.16530871e-07 max_solution_error=6.79972156e-07 PASS
+chapter 31 reference solvers: PASS

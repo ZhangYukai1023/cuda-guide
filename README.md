@@ -36,6 +36,7 @@
 | [第 28 章：从归约到 Softmax 与归一化](chapters/ch28-softmax-normalization/README.md) | 稳定 Softmax、LayerNorm、RMSNorm、FP16/BF16 | 15 组 FP32 与 4 组低精度 CPU 对照通过 |
 | [第 29 章：Tensor Core、GEMM 与 CUTLASS](chapters/ch29-tensor-core-cutlass/README.md) | FP16 GEMM、WMMA、可选 cuBLAS/CUTLASS | 朴素/WMMA CPU 对照通过；两种可选库缺依赖未测 |
 | [第 30 章：Attention 与推理专题](chapters/ch30-attention-inference/README.md) | 显式与在线前向、因果 Mask | 六组输入两条 GPU 路径 CPU 对照通过；框架/反向未测 |
+| [第 31 章：线性代数与稀疏求解](chapters/ch31-linear-sparse-solvers/README.md) | 稠密 GEMV、CSR SpMV、混合式 CG、可选库求解 | 普通 CUDA 路径通过；cuBLAS/cuSPARSE/cuSOLVER 缺依赖未测 |
 
 其余大纲章节正在编写。逐章现有素材与缺口见 [覆盖核对](coverage.md)。
 
@@ -96,6 +97,7 @@ cuda-guide/
     ch28-softmax-normalization/
     ch29-tensor-core-cutlass/
     ch30-attention-inference/
+    ch31-linear-sparse-solvers/
     common/image_io.hpp
   pilot/
     ch02-thread-indexing/
@@ -124,7 +126,7 @@ ctest --test-dir build/outline --output-on-failure
 
 本机 GPU 为 RTX 5060 Ti（计算能力 12.0），驱动 595.84，nvcc 12.8.93，GCC 13.3.0，CMake 3.28.3。nvcc 未加入默认 PATH，因此使用绝对路径。其他机器需重新选择工具路径与目标架构。没有自动安装或升级驱动、CUDA 或依赖。
 
-当前统一验证：42 项通过，1 项因没有第二块 GPU 跳过，0 项失败。不能把 CTest 的“100% tests passed”解释成双卡也通过。详情见 [全书验证记录](results/validation.md) 和各章 results/validation.md。
+当前统一验证：43 项通过，1 项因没有第二块 GPU 跳过，0 项失败。不能把 CTest 的“100% tests passed”解释成双卡也通过。详情见 [全书验证记录](results/validation.md) 和各章 results/validation.md。
 
 ## 图像结果
 
@@ -146,7 +148,7 @@ python3 scripts/render_images.py
 
 ## 范围、来源与尚未验证的部分
 
-原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前正式正文已写至第 30 章；部分工具、依赖与性能路径仍未验证；先前 10 章压缩初版保留在 pilot/，章节安排与原大纲不一致。逐章差距见 [覆盖核对](coverage.md)。当前工作目录未发现适用的 AGENTS.md。
+原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前正式正文已写至第 31 章；部分工具、依赖与性能路径仍未验证；先前 10 章压缩初版保留在 pilot/，章节安排与原大纲不一致。逐章差距见 [覆盖核对](coverage.md)。当前工作目录未发现适用的 AGENTS.md。
 
 pilot 提供可运行的入门应用示例，38 章正文仍在编写。共享内存、归约与 WMMA 已有实测示例；cuBLAS/cuDNN 集成、一般仿射旋转、P2P、NCCL/MPI 尚未实测的路径在各章分别标注。
 

@@ -10,6 +10,7 @@
 | [第 2 章：从一个 GPU 线程开始](chapters/ch02-first-thread/README.md) | 写入 42、标量加法、8 个线程写编号 | CPU 对照与独立构建通过 |
 | [第 3 章：从线程编号到数组计算](chapters/ch03-array-indexing/README.md) | 一维、Grid-stride、二维索引与尾块 | CPU 对照通过 |
 | [第 4 章：管理数据、内存和资源](chapters/ch04-memory-resources/README.md) | 平方、多轮缓冲区复用、打包传输 | CPU 对照通过 |
+| [第 5 章：执行模型与 Warp](chapters/ch05-warp-execution/README.md) | Warp/lane、统一与奇偶分支、输入分布 | CPU 对照通过 |
 
 其余大纲章节正在编写。逐章现有素材与缺口见 [覆盖核对](coverage.md)。
 
@@ -44,6 +45,7 @@ cuda-guide/
     ch02-first-thread/
     ch03-array-indexing/
     ch04-memory-resources/
+    ch05-warp-execution/
   pilot/
     ch02-thread-indexing/
     ...
@@ -71,7 +73,7 @@ ctest --test-dir build/outline --output-on-failure
 
 本机 GPU 为 RTX 5060 Ti（计算能力 12.0），驱动 595.84，nvcc 12.8.93，GCC 13.3.0，CMake 3.28.3。nvcc 未加入默认 PATH，因此使用绝对路径。其他机器需重新选择工具路径与目标架构。没有自动安装或升级驱动、CUDA 或依赖。
 
-当前统一验证：15 项通过，1 项因没有第二块 GPU 跳过，0 项失败。不能把 CTest 的“100% tests passed”解释成双卡也通过。详情见 [全书验证记录](results/validation.md) 和各章 results/validation.md。
+当前统一验证：16 项通过，1 项因没有第二块 GPU 跳过，0 项失败。不能把 CTest 的“100% tests passed”解释成双卡也通过。详情见 [全书验证记录](results/validation.md) 和各章 results/validation.md。
 
 ## 图像结果
 
@@ -93,7 +95,7 @@ python3 scripts/render_images.py
 
 ## 范围、来源与尚未验证的部分
 
-原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前正式正文已完成第 1—4 章；先前 10 章压缩初版保留在 pilot/，章节安排与原大纲不一致。逐章差距见 [覆盖核对](coverage.md)。当前工作目录未发现适用的 AGENTS.md。
+原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前正式正文已完成第 1—5 章；先前 10 章压缩初版保留在 pilot/，章节安排与原大纲不一致。逐章差距见 [覆盖核对](coverage.md)。当前工作目录未发现适用的 AGENTS.md。
 
 pilot 提供可运行的入门应用示例，38 章正文仍在编写。共享内存和归约已有示例；Tensor Core、cuBLAS/cuDNN 集成、一般仿射旋转、P2P、NCCL/MPI 只保留适用的扩展说明，没有冒充实现或实测。
 

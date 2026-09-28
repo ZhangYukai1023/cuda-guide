@@ -129,3 +129,7 @@ The following tests did not run:
 ## 第 4 章加入后的验证
 
 重新构建并运行 `ctest --test-dir build/outline --output-on-failure`，实测 16 项：15 项通过，1 项双 GPU 测试因只有一块可见 GPU 跳过，0 项失败。新增 `ch04_memory_resources` 测试通过。另按 `chapters/ch04-memory-resources/examples` 独立配置、构建并运行 CTest，1/1 通过。计时口径和该次测量值见 [第 4 章验证记录](../chapters/ch04-memory-resources/results/validation.md)。
+
+## 第 5 章加入后的验证
+
+重新构建并运行 `ctest --test-dir build/outline --output-on-failure`，实测 17 项：16 项通过，1 项双 GPU 测试因只有一块可见 GPU 跳过，0 项失败。新增 `ch05_warp_paths` 测试通过。独立构建目录为 `build/ch05-warp-standalone`，该章 CTest 1/1 通过。`build/ch05-standalone` 原先用于 pilot 图像章节，不能复用其 CMake 缓存；没有删除旧构建产物。见 [第 5 章验证记录](../chapters/ch05-warp-execution/results/validation.md)。

@@ -77,4 +77,4 @@ ctest --test-dir build/outline -R '^ch13_profile_' --output-on-failure
 4. 若 `stride` 的内存指标变差，但端到端时间几乎不变，能否说业务得到显著优化空间？答：不能；还要看该 kernel 在完整任务中的占比和测量波动。
 5. 怎样分离人为休眠与小调用数量的影响？答：增加“64 次小调用但不休眠”的第三个对照，其余输入和编译条件保持一致。
 
-[下一章：访存优化](../ch14-memory-optimization/README.md)把诊断落到合并访存、对齐与数据重用上。
+[下一章：访存优化](../ch14-memory-optimization/README.md)用转置实验研究合并访存、对齐与数据重用。

@@ -17,7 +17,7 @@
 | 11 先认识库 | [正式第 11 章](chapters/ch11-cuda-libraries/README.md) | Thrust 排序和 CUB 求和 GPU/CPU 对照已通过；cuBLAS 开发库缺失，GEMM 未测；NPP 仅作定位介绍 |
 | 12 建立可信的性能基准 | [正式第 12 章](chapters/ch12-benchmarking/README.md) | 三种规模、预热、重复与多口径统计已运行且 CPU 对照通过；设备被其他任务占满，性能结论待空闲复测 |
 | 13 用 Nsight 找到瓶颈 | [正式第 13 章](chapters/ch13-nsight-profiling/README.md) | 三种调用模式的 GPU/CPU 对照通过；NVTX3、Nsight Systems/Compute 缺失，时间线与指标未测 |
-| 14 访存优化 | 无 | 连续/跨步、布局与实测对照 |
+| 14 访存优化 | [正式第 14 章](chapters/ch14-memory-optimization/README.md) | 朴素与两种共享转置均通过 CPU 对照；GPU 有并发任务，性能结论待空闲复测，Nsight 指标未测 |
 | 15 执行效率与资源取舍 | 无 | Block、寄存器、占用率实验 |
 | 16 矩阵乘优化贯穿案例 | [现有第 8 章直接 GEMM](pilot/ch08-ai-operators/README.md) | 逐步优化与可信前后对比 |
 | 17 Stream、Event 与流水线 | [现有第 7 章](pilot/ch07-image-pipeline/README.md) | 明确重叠条件与时间线证据 |

@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.24)
+project(cuda_ch14_memory_optimization LANGUAGES CXX CUDA)
+set(CMAKE_CUDA_STANDARD 17)
+set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+add_executable(transpose_compare transpose_compare.cu)
+target_compile_options(transpose_compare PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-lineinfo>)
+enable_testing()
+add_test(NAME ch14_transpose_compare COMMAND transpose_compare)

@@ -181,3 +181,9 @@ The following tests did not run:
 2026-09-28 第 13 章独立目录 `build/ch13-nsight-standalone` 配置、构建成功，三种模式独立 CTest 3/3 通过；手动运行 `tiny`、`batch`、`stride`，全部 16384 项 GPU 结果与 CPU 参考逐项一致。根 `build/outline` 重新配置、全目标构建和完整 CTest 通过：27 项中 26 项通过、0 项失败，1 项既有双 GPU 用例因单卡跳过，总时间 2.57 秒。详见[章节记录](../chapters/ch13-nsight-profiling/results/validation.md)。
 
 当前缺 NVTX3 头文件和 `nsys`、`ncu` 可执行工具，本章未产生 NVTX 标记或 Nsight 报告；时间线、计数器和瓶颈假设仍未验证。第 12 章性能基线也待 GPU 空闲复测。
+
+## 第 14 章加入后的验证
+
+2026-09-28 第 14 章独立配置、构建和 CTest 1/1 通过；三种形状上朴素、32×32 共享与 32×33 填充共享转置的全部元素均与 CPU 参考精确一致。根 `build/outline` 重新配置、全目标构建、完整 CTest 28 项中 27 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 2.66 秒。原始 Event 数据和并发负载见[章节记录](../chapters/ch14-memory-optimization/results/validation.md)。
+
+测量时另一进程占用约 5.5 GiB GPU 内存，三个版本的相对性能不能作为可信基线；Nsight 访存与 bank 冲突指标未测。第 12 章的性能基线同样待设备空闲复测。

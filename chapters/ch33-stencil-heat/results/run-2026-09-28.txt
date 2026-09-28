@@ -1,0 +1,14 @@
+GPU=NVIDIA GeForce RTX 5060 Ti
+1D diffusion max_abs_error=7.0116e-08 range=[0,0.999348] tolerance=3e-05
+1D steps=100 r=0.2 kernel_time_ms=0.210272
+2D naive diffusion max_abs_error=1.01159e-07 range=[0,0.788104] tolerance=5e-05
+2D naive steps=80 r=0.2 kernel_time_ms=0.108128
+2D tiled diffusion max_abs_error=1.01159e-07 range=[0,0.788104] tolerance=5e-05
+2D tiled steps=80 r=0.2 kernel_time_ms=0.111744
+2D naive/tiled max_abs_difference=0
+2D naive diffusion max_abs_error=1.28914e-07 range=[0,0.961061] tolerance=5e-05
+2D naive steps=40 r=0.2 kernel_time_ms=0.055424
+2D tiled diffusion max_abs_error=1.28914e-07 range=[0,0.961061] tolerance=5e-05
+2D tiled steps=40 r=0.2 kernel_time_ms=0.053408
+2D partial-tile max_abs_difference=0
+chapter 33 stencil and heat: PASS

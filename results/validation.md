@@ -163,3 +163,9 @@ The following tests did not run:
 2026-09-28 第 10 章 Release/Debug 独立配置、构建及安全模式 CTest 分别 1/1 通过；Debug CMake 已修复 `-G` 与 `-lineinfo` 冲突。根 `build/outline` 重新配置、全目标构建和完整 CTest 通过：22 项中 21 项通过、0 项失败、1 项双卡测试因设备不足跳过，退出码 0，总时间 3.78 秒。
 
 当前环境没有可用的 Compute Sanitizer 或 CUDA-GDB，故障模式与单步定位**未测**。常规回归只包含 `safe` 模式，详见[章节记录](../chapters/ch10-debugging/results/validation.md)。
+
+## 第 11 章加入后的验证
+
+2026-09-28 第 11 章独立目录 `build/ch11-library-standalone` 配置、构建与 CTest 1/1 通过；Thrust 排序和 CUB 两个整数求和在 GPU 上通过 CPU 对照。当前环境无 cuBLAS 开发库，SGEMM 分支明确 `SKIP`、未编译也未运行；初始缺依赖配置和动态运行库加载失败已修复为可选 cuBLAS 与静态 CUDA 运行库链接，细节见[章节记录](../chapters/ch11-cuda-libraries/results/validation.md)。
+
+根 `build/outline` 重新配置、全目标构建和完整 CTest 通过：23 项中 22 项通过、0 项失败、1 项双卡测试因设备不足跳过，退出码 0，总时间 4.05 秒。`ch11_library_baselines` 的通过仅覆盖 Thrust/CUB；不可把 cuBLAS `SKIP` 计入完成。

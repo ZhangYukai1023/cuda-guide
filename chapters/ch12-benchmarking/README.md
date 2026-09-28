@@ -69,4 +69,4 @@ ctest --test-dir build/outline -R '^ch12_benchmark_vector$' --output-on-failure
 4. 如果小任务 CPU 中位数 0.001 ms、GPU 墙钟 0.04 ms，应先得出什么结论？答：在当前输入、设备和任务边界下，GPU 路径更慢；还需检查计时分辨率与波动，不能外推到大规模任务。
 5. 想比较“每次都新建缓冲区”的服务接口，怎么改实验？答：把分配、填充、传输、计算、结果回传和释放全放进每个请求的墙钟区间，再重复采样；保留正确性检查和环境记录。
 
-下一章使用 Nsight Systems 与 Nsight Compute 在时间线和 kernel 指标中定位瓶颈。
+[下一章：用 Nsight 找到瓶颈](../ch13-nsight-profiling/README.md)使用 Nsight Systems 与 Nsight Compute 在时间线和 kernel 指标中定位瓶颈。

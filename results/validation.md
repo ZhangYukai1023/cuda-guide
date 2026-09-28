@@ -223,3 +223,7 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 2026-09-28 在 `9af9358` 上运行第 20 章 Python 报告脚本：构建、完整 CTest 与第 12 章基准采集的 JSON 报告为 `ok=true`，CTest 33 项中 32 项通过、1 项双 GPU 用例跳过；另把 memcheck 设为必需，因 `compute-sanitizer` 缺失，报告正确给出 `ok=false` 与失败退出码。详见[章节记录](../chapters/ch20-testing-deployment/results/validation.md)。
 
 基准采集时 GPU 有并发任务，未建立可信性能基线；没有第二部署环境。该脚本不新增 CMake/CTest 目标，根工程测试数量仍为 33 项。
+
+## 第 21 章加入后的验证
+
+2026-09-28 图像公共头文件与第 21 章同步后，独立构建和 CTest 1/1 通过；默认六项图像操作以及用生成的 P5 文件验证可选输入路径，均与 CPU 参考逐字节一致。根 `build/outline` 重新配置、全目标构建与完整 CTest 34 项中 33 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.28 秒。PGM/PPM 和差异图保存在构建目录，详见[章节记录](../chapters/ch21-image-layout/results/validation.md)。

@@ -24,7 +24,7 @@
 | 18 CUDA Graphs 与内存池 | [正式第 18 章](chapters/ch18-graphs-memory-pool/README.md) | Graph 与流顺序分配正确性通过；并发负载下性能待空闲复测 |
 | 19 组织 CUDA C++ 工程 | [正式第 19 章](chapters/ch19-cuda-project/README.md)；[根 CMake](CMakeLists.txt) | 多文件静态库、跨文件设备链接、接口错误路径已通过；Driver/NVRTC 与动态库未实现 |
 | 20 测试、部署与性能回归 | [正式第 20 章](chapters/ch20-testing-deployment/README.md)；[根 CTest](CMakeLists.txt) | 报告脚本在 zyk 实测；memcheck 缺工具而正确失败，性能基线与跨机器部署未测 |
-| 21 像素、通道与布局 | [图像公共代码](common/image_support.hpp) | 多通道、布局、逐像素操作 |
+| 21 像素、通道与布局 | [正式第 21 章](chapters/ch21-image-layout/README.md)；[公共 PNM 头文件](chapters/common/image_io.hpp) | ROI、RGB/BGR/RGBA 与行填充逐字节 CPU 对照通过；仅测教学 PNM 格式 |
 | 22 均值与高斯滤波 | [现有第 5 章均值滤波](pilot/ch05-image-filtering/README.md) | 高斯滤波及对照 |
 | 23 去噪与质量评价 | [现有第 5 章中值去噪](pilot/ch05-image-filtering/README.md) | 更多噪声模型与质量指标 |
 | 24 插值与几何重采样 | [现有第 6 章](pilot/ch06-image-resampling/README.md) | 一般几何变换与边界策略 |

@@ -17,6 +17,7 @@
 | [第 9 章：正确性与数值验证](chapters/ch09-correctness-validation/README.md) | 边界、浮点容差、非有限值与大逻辑下标 | CPU 对照通过 |
 | [第 10 章：调试工具与故障定位](chapters/ch10-debugging/README.md) | 安全基线、四类故障复现入口 | 安全模式通过；工具检查未测 |
 | [第 11 章：先认识库，再决定实现方式](chapters/ch11-cuda-libraries/README.md) | Thrust 排序、CUB 求和、可选 cuBLAS GEMM | Thrust/CUB 通过；cuBLAS 缺依赖未测 |
+| [第 12 章：建立可信的性能基准](chapters/ch12-benchmarking/README.md) | Event、传输、墙钟与 CPU 同口径测量 | 正确性通过；GPU 繁忙，性能结论待测 |
 
 其余大纲章节正在编写。逐章现有素材与缺口见 [覆盖核对](coverage.md)。
 
@@ -58,6 +59,7 @@ cuda-guide/
     ch09-correctness-validation/
     ch10-debugging/
     ch11-cuda-libraries/
+    ch12-benchmarking/
   pilot/
     ch02-thread-indexing/
     ...

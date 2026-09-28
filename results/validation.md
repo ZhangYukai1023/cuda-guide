@@ -169,3 +169,9 @@ The following tests did not run:
 2026-09-28 第 11 章独立目录 `build/ch11-library-standalone` 配置、构建与 CTest 1/1 通过；Thrust 排序和 CUB 两个整数求和在 GPU 上通过 CPU 对照。当前环境无 cuBLAS 开发库，SGEMM 分支明确 `SKIP`、未编译也未运行；初始缺依赖配置和动态运行库加载失败已修复为可选 cuBLAS 与静态 CUDA 运行库链接，细节见[章节记录](../chapters/ch11-cuda-libraries/results/validation.md)。
 
 根 `build/outline` 重新配置、全目标构建和完整 CTest 通过：23 项中 22 项通过、0 项失败、1 项双卡测试因设备不足跳过，退出码 0，总时间 4.05 秒。`ch11_library_baselines` 的通过仅覆盖 Thrust/CUB；不可把 cuBLAS `SKIP` 计入完成。
+
+## 第 12 章加入后的验证
+
+2026-09-28 第 12 章独立配置、构建及 CTest 1/1 通过，三种尺寸的 GPU 输出均与 CPU 对照一致。程序手动运行三次并报告预热、Event、传输、墙钟和 CPU 统计，但 GPU 另有计算任务且利用率 100%，性能数字只作受干扰的原始记录，不能用于加速结论；详见[章节记录](../chapters/ch12-benchmarking/results/validation.md)。
+
+根 `build/outline` 全目标构建和完整 CTest 通过：24 项中 23 项通过、0 项失败、1 项双卡测试因设备不足跳过，退出码 0，总时间 5.18 秒。第 12 章正确性已过，可信性能基线待设备空闲复测。

@@ -15,7 +15,7 @@
 | 9 正确性与数值验证 | [正式第 9 章](chapters/ch09-correctness-validation/README.md) | 空输入、确定性随机数据、组合容差、NaN/Inf、舍入顺序、半精度往返和大逻辑下标已验证 |
 | 10 调试工具与故障定位 | [正式第 10 章](chapters/ch10-debugging/README.md) | Release/Debug 安全模式及根回归已通过；Compute Sanitizer 与 CUDA-GDB 未安装，四类故障定位未测 |
 | 11 先认识库 | [正式第 11 章](chapters/ch11-cuda-libraries/README.md) | Thrust 排序和 CUB 求和 GPU/CPU 对照已通过；cuBLAS 开发库缺失，GEMM 未测；NPP 仅作定位介绍 |
-| 12 建立可信的性能基准 | [现有第 4 章计时](pilot/ch04-engineering-and-timing/README.md) | 多种输入规模、统计波动与 CPU 基线 |
+| 12 建立可信的性能基准 | [正式第 12 章](chapters/ch12-benchmarking/README.md) | 三种规模、预热、重复与多口径统计已运行且 CPU 对照通过；设备被其他任务占满，性能结论待空闲复测 |
 | 13 用 Nsight 找到瓶颈 | 无 | Nsight 实验；当前工具缺失须注明限制 |
 | 14 访存优化 | 无 | 连续/跨步、布局与实测对照 |
 | 15 执行效率与资源取舍 | 无 | Block、寄存器、占用率实验 |

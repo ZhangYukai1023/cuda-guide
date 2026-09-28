@@ -257,3 +257,7 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 ## 第 28 章加入后的验证
 
 2026-09-28 第 28 章独立配置、构建、CTest 2/2 通过；FP32 五种尺寸的三类归一化共 15 组及 FP16/BF16 各两组 Softmax 均通过同量化口径 CPU 对照。根工程重新配置、全目标构建和完整 CTest 41 项中 40 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.96 秒。完整输出和未测边界见[章节记录](../chapters/ch28-softmax-normalization/results/validation.md)。单次 Event 时间不作性能结论。
+
+## 第 29 章加入后的验证
+
+2026-09-28 第 29 章独立配置、构建及 CTest 1/1 通过；三个形状的朴素 FP16 GEMM 与 WMMA 路径共六组均与量化输入的 CPU double 参考相符。cuBLAS 开发库缺失，GEMMEx 分支 SKIP；CUTLASS 头文件未找到，其可选目标未构建。根工程重新配置、全目标构建及 CTest 42 项中 41 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 4.03 秒。原始输出、误差与限制见[章节记录](../chapters/ch29-tensor-core-cutlass/results/validation.md)。未核查实际硬件指令，也没有可信性能排名。

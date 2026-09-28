@@ -1,0 +1,13 @@
+naive_half_f32_bias_relu M=16 N=16 max_abs_error=1.192093e-07 bad=0 kernel_ms=0.0917 PASS
+wmma_half_f32_bias_relu M=16 N=16 max_abs_error=1.192093e-07 bad=0 kernel_ms=0.0111 PASS
+cublas_gemmex_plus_bias_relu: SKIP (cuBLAS development library unavailable)
+shape M=16 N=16 K=16 padded=16x16x16 PASS
+naive_half_f32_bias_relu M=19 N=23 max_abs_error=7.152557e-07 bad=0 kernel_ms=0.0084 PASS
+wmma_half_f32_bias_relu M=19 N=23 max_abs_error=4.768372e-07 bad=0 kernel_ms=0.0037 PASS
+cublas_gemmex_plus_bias_relu: SKIP (cuBLAS development library unavailable)
+shape M=19 N=23 K=37 padded=32x32x48 PASS
+naive_half_f32_bias_relu M=64 N=64 max_abs_error=7.152557e-07 bad=0 kernel_ms=0.0084 PASS
+wmma_half_f32_bias_relu M=64 N=64 max_abs_error=4.768372e-07 bad=0 kernel_ms=0.0037 PASS
+cublas_gemmex_plus_bias_relu: SKIP (cuBLAS development library unavailable)
+shape M=64 N=64 K=64 padded=64x64x64 PASS
+chapter 29 tensor core GEMM: PASS

@@ -1,0 +1,16 @@
+softmax rows=1 width=5 extreme=0 max_abs_error=0 bad=0 kernel_ms=0.1002 task_ms=0.1347 PASS
+layernorm rows=1 width=5 extreme=0 max_abs_error=0 bad=0 kernel_ms=0.0152 task_ms=0.0270 PASS
+rmsnorm rows=1 width=5 extreme=0 max_abs_error=0 bad=0 kernel_ms=0.0138 task_ms=0.0240 PASS
+softmax rows=7 width=37 extreme=0 max_abs_error=0 bad=0 kernel_ms=0.0068 task_ms=0.0283 PASS
+layernorm rows=7 width=37 extreme=0 max_abs_error=0 bad=0 kernel_ms=0.0081 task_ms=0.0192 PASS
+rmsnorm rows=7 width=37 extreme=0 max_abs_error=0 bad=0 kernel_ms=0.0063 task_ms=0.0168 PASS
+softmax rows=4 width=2049 extreme=0 max_abs_error=0 bad=0 kernel_ms=0.0287 task_ms=0.0593 PASS
+layernorm rows=4 width=2049 extreme=0 max_abs_error=0 bad=0 kernel_ms=0.0123 task_ms=0.0335 PASS
+rmsnorm rows=4 width=2049 extreme=0 max_abs_error=0 bad=0 kernel_ms=0.0082 task_ms=0.0294 PASS
+softmax rows=3 width=37 extreme=1 max_abs_error=0 bad=0 kernel_ms=0.0080 task_ms=0.0196 PASS
+layernorm rows=3 width=37 extreme=1 max_abs_error=0 bad=0 kernel_ms=0.0085 task_ms=0.0184 PASS
+rmsnorm rows=3 width=37 extreme=1 max_abs_error=0 bad=0 kernel_ms=0.0057 task_ms=0.0160 PASS
+softmax rows=2 width=1 extreme=1 max_abs_error=0 bad=0 kernel_ms=0.0055 task_ms=0.0174 PASS
+layernorm rows=2 width=1 extreme=1 max_abs_error=0 bad=0 kernel_ms=0.0080 task_ms=0.0176 PASS
+rmsnorm rows=2 width=1 extreme=1 max_abs_error=0 bad=0 kernel_ms=0.0062 task_ms=0.0159 PASS
+chapter 28 row normalization: PASS

@@ -33,6 +33,7 @@
 | [第 25 章：边缘、形态学与对比度增强](chapters/ch25-edges-morphology-contrast/README.md) | Sobel、膨胀/腐蚀、开闭、直方图均衡化 | 18 条默认及 PGM 输入路径 CPU 对照通过 |
 | [第 26 章：完整图像处理流水线](chapters/ch26-image-pipeline/README.md) | PGM→中值→缩小→归一化，串行与双槽 | 合成与目录输入 CPU 对照通过；性能待复测 |
 | [第 27 章：张量与 PyTorch 自定义算子](chapters/ch27-pytorch-custom-op/README.md) | CUDA 扩展、当前 Stream、非连续输入与梯度 | 现有 PyTorch 环境独立构建与 GPU 检查通过 |
+| [第 28 章：从归约到 Softmax 与归一化](chapters/ch28-softmax-normalization/README.md) | 稳定 Softmax、LayerNorm、RMSNorm、FP16/BF16 | 15 组 FP32 与 4 组低精度 CPU 对照通过 |
 
 其余大纲章节正在编写。逐章现有素材与缺口见 [覆盖核对](coverage.md)。
 
@@ -90,6 +91,7 @@ cuda-guide/
     ch25-edges-morphology-contrast/
     ch26-image-pipeline/
     ch27-pytorch-custom-op/
+    ch28-softmax-normalization/
     common/image_io.hpp
   pilot/
     ch02-thread-indexing/
@@ -118,7 +120,7 @@ ctest --test-dir build/outline --output-on-failure
 
 本机 GPU 为 RTX 5060 Ti（计算能力 12.0），驱动 595.84，nvcc 12.8.93，GCC 13.3.0，CMake 3.28.3。nvcc 未加入默认 PATH，因此使用绝对路径。其他机器需重新选择工具路径与目标架构。没有自动安装或升级驱动、CUDA 或依赖。
 
-当前统一验证：38 项通过，1 项因没有第二块 GPU 跳过，0 项失败。不能把 CTest 的“100% tests passed”解释成双卡也通过。详情见 [全书验证记录](results/validation.md) 和各章 results/validation.md。
+当前统一验证：40 项通过，1 项因没有第二块 GPU 跳过，0 项失败。不能把 CTest 的“100% tests passed”解释成双卡也通过。详情见 [全书验证记录](results/validation.md) 和各章 results/validation.md。
 
 ## 图像结果
 
@@ -140,7 +142,7 @@ python3 scripts/render_images.py
 
 ## 范围、来源与尚未验证的部分
 
-原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前正式正文已写至第 27 章；部分工具、依赖与性能路径仍未验证；先前 10 章压缩初版保留在 pilot/，章节安排与原大纲不一致。逐章差距见 [覆盖核对](coverage.md)。当前工作目录未发现适用的 AGENTS.md。
+原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前正式正文已写至第 28 章；部分工具、依赖与性能路径仍未验证；先前 10 章压缩初版保留在 pilot/，章节安排与原大纲不一致。逐章差距见 [覆盖核对](coverage.md)。当前工作目录未发现适用的 AGENTS.md。
 
 pilot 提供可运行的入门应用示例，38 章正文仍在编写。共享内存和归约已有示例；Tensor Core、cuBLAS/cuDNN 集成、一般仿射旋转、P2P、NCCL/MPI 只保留适用的扩展说明，没有冒充实现或实测。
 

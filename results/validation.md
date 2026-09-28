@@ -253,3 +253,7 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 2026-09-28 使用 zyk 现有 ComfyUI 虚拟环境 PyTorch `2.13.0+cu130` 和 nvcc 12.8 构建 `_C` 注册共享库成功；设置现有 Toolkit `lib64` 动态库路径后，前向、反向、非连续输入、当前 Stream、错误输入和 `opcheck` 全部通过。构建有 CUDA 版本差异警告，详情及两次环境故障的修复见[章节记录](../chapters/ch27-pytorch-custom-op/results/validation.md)。
 
 第 27 章单独由 PyTorch 构建和 Python 检查，不增加根 CTest 目标。根 `build/outline` 重新配置、全目标构建与完整 CTest 仍为 39 项中 38 项通过、1 项双 GPU 用例跳过、0 项失败，总时间 3.77 秒。
+
+## 第 28 章加入后的验证
+
+2026-09-28 第 28 章独立配置、构建、CTest 2/2 通过；FP32 五种尺寸的三类归一化共 15 组及 FP16/BF16 各两组 Softmax 均通过同量化口径 CPU 对照。根工程重新配置、全目标构建和完整 CTest 41 项中 40 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.96 秒。完整输出和未测边界见[章节记录](../chapters/ch28-softmax-normalization/results/validation.md)。单次 Event 时间不作性能结论。

@@ -1,0 +1,5 @@
+FP16 rows=1 width=5 extreme=0 max_error=0 max_row_sum_error=0.000286102
+FP16 rows=3 width=257 extreme=1 max_error=0 max_row_sum_error=9.15527e-05
+BF16 rows=1 width=5 extreme=0 max_error=0 max_row_sum_error=0.000860214
+BF16 rows=3 width=257 extreme=1 max_error=0 max_row_sum_error=0.000366658
+chapter 28 mixed-precision Softmax: PASS (BF16 may be SKIP)

@@ -63,4 +63,4 @@ ctest --test-dir build/outline -R '^ch14_transpose_compare$' --output-on-failure
 4. 若把 tile 宽改为 16，是否仍可直接用固定 `32×33` 的 bank 分析？答：不能；Warp 内线程坐标、行跨度和访问分组都会变，应重新分析并实测。
 5. 若填充版共享内存 bank 冲突减少但总时间不变，下一步看什么？答：检查全局访存、启动成本、占用与资源使用、缓存和测量波动，判断原瓶颈是否在 bank 冲突。
 
-[下一章：执行效率与资源取舍](../ch15-execution-resources/README.md)继续分析 Block 大小、资源和 Occupancy 的取舍。
+[下一章：执行效率与资源取舍](../ch15-execution-resources/README.md)分析 Block 大小、资源和 Occupancy 的取舍。

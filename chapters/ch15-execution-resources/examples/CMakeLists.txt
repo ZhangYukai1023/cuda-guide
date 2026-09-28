@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.24)
+project(cuda_ch15_execution_resources LANGUAGES CXX CUDA)
+set(CMAKE_CUDA_STANDARD 17)
+set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+add_executable(resource_tradeoffs resource_tradeoffs.cu)
+target_compile_options(resource_tradeoffs PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-lineinfo>)
+enable_testing()
+add_test(NAME ch15_resource_tradeoffs COMMAND resource_tradeoffs)

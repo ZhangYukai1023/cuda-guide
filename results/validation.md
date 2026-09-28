@@ -187,3 +187,9 @@ The following tests did not run:
 2026-09-28 第 14 章独立配置、构建和 CTest 1/1 通过；三种形状上朴素、32×32 共享与 32×33 填充共享转置的全部元素均与 CPU 参考精确一致。根 `build/outline` 重新配置、全目标构建、完整 CTest 28 项中 27 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 2.66 秒。原始 Event 数据和并发负载见[章节记录](../chapters/ch14-memory-optimization/results/validation.md)。
 
 测量时另一进程占用约 5.5 GiB GPU 内存，三个版本的相对性能不能作为可信基线；Nsight 访存与 bank 冲突指标未测。第 12 章的性能基线同样待设备空闲复测。
+
+## 第 15 章加入后的验证
+
+2026-09-28 第 15 章独立配置、构建和 CTest 1/1 通过；两种输入分布、两类任务、两种策略、三种 Block 大小合计 24 组均通过 GPU/CPU 精确对照，并保存完整 stdout。根 `build/outline` 重新配置、全目标构建与完整 CTest 29 项中 28 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 2.76 秒。详见[章节记录](../chapters/ch15-execution-resources/results/validation.md)。
+
+报告的 Occupancy 是 API 预测上限，非 profiler 实测；GPU 同时运行其他任务，Event 时间不能用于可靠性能排名。Nsight 指标未测。

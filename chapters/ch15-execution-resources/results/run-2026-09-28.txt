@@ -1,0 +1,26 @@
+GPU=NVIDIA GeForce RTX 5060 Ti SM_count=36 max_threads_per_SM=1536
+pattern=cycling_0_to_15 operation=sum mode=global_atomic block=64 median_ms=0.0044 registers_per_thread=10 shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=cycling_0_to_15 operation=sum mode=block_local block=64 median_ms=0.0038 registers_per_thread=12 shared_bytes=256 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=cycling_0_to_15 operation=histogram mode=global_atomic block=64 median_ms=0.0090 registers_per_thread=10 static_shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=cycling_0_to_15 operation=histogram mode=block_local block=64 median_ms=0.0044 registers_per_thread=10 static_shared_bytes=64 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=cycling_0_to_15 operation=sum mode=global_atomic block=128 median_ms=0.0039 registers_per_thread=10 shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=cycling_0_to_15 operation=sum mode=block_local block=128 median_ms=0.0044 registers_per_thread=12 shared_bytes=512 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=cycling_0_to_15 operation=histogram mode=global_atomic block=128 median_ms=0.0080 registers_per_thread=10 static_shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=cycling_0_to_15 operation=histogram mode=block_local block=128 median_ms=0.0038 registers_per_thread=10 static_shared_bytes=64 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=cycling_0_to_15 operation=sum mode=global_atomic block=256 median_ms=0.0039 registers_per_thread=10 shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=cycling_0_to_15 operation=sum mode=block_local block=256 median_ms=0.0045 registers_per_thread=12 shared_bytes=1024 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=cycling_0_to_15 operation=histogram mode=global_atomic block=256 median_ms=0.0080 registers_per_thread=10 static_shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=cycling_0_to_15 operation=histogram mode=block_local block=256 median_ms=0.0033 registers_per_thread=10 static_shared_bytes=64 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=sum mode=global_atomic block=64 median_ms=0.0038 registers_per_thread=10 shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=sum mode=block_local block=64 median_ms=0.0044 registers_per_thread=12 shared_bytes=256 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=histogram mode=global_atomic block=64 median_ms=0.0306 registers_per_thread=10 static_shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=histogram mode=block_local block=64 median_ms=0.0044 registers_per_thread=10 static_shared_bytes=64 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=sum mode=global_atomic block=128 median_ms=0.0039 registers_per_thread=10 shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=sum mode=block_local block=128 median_ms=0.0042 registers_per_thread=12 shared_bytes=512 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=histogram mode=global_atomic block=128 median_ms=0.0307 registers_per_thread=10 static_shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=histogram mode=block_local block=128 median_ms=0.0029 registers_per_thread=10 static_shared_bytes=64 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=sum mode=global_atomic block=256 median_ms=0.0038 registers_per_thread=10 shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=sum mode=block_local block=256 median_ms=0.0044 registers_per_thread=12 shared_bytes=1024 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=histogram mode=global_atomic block=256 median_ms=0.0316 registers_per_thread=10 static_shared_bytes=0 local_bytes=0 predicted_occupancy=1.000 PASS
+pattern=all_zero operation=histogram mode=block_local block=256 median_ms=0.0028 registers_per_thread=10 static_shared_bytes=64 local_bytes=0 predicted_occupancy=1.000 PASS
+chapter 15 resource tradeoffs: PASS

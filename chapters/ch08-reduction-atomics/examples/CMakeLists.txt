@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.24)
+project(cuda_ch08_reduction_atomics LANGUAGES CXX CUDA)
+set(CMAKE_CUDA_STANDARD 17)
+set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+add_executable(reduction_atomic reduction_atomic.cu)
+target_compile_options(reduction_atomic PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-lineinfo>)
+enable_testing()
+add_test(NAME ch08_reduction_atomic COMMAND reduction_atomic)

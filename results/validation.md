@@ -145,3 +145,9 @@ The following tests did not run:
 2026-09-28 同步第 7 章草稿后，在 `build/ch07-shared-standalone` 独立配置、构建并运行 CTest，1/1 通过；手动运行 8 线程/Warp 反转、3×2/1×1/31×17 分块转置和四种长度的块内求和，均与 CPU 参考完全一致（`mismatches=0`）。[章节记录](../chapters/ch07-shared-memory/results/validation.md)保留输出与限制。
 
 根 `build/outline` 重新配置并全目标构建，完整 CTest 19 项中 18 项通过、1 项双卡测试因设备不足跳过、0 项失败，退出码 0，总时间 3.39 秒。当前未找到 Compute Sanitizer，坏例子工具检查与性能分析均未测。
+
+## 第 8 章加入后的验证
+
+2026-09-28 同步第 8 章后，在 `build/ch08-reduction-standalone` 独立配置、构建、CTest，1/1 通过；手动运行长度 1/7/128/1003 的两阶段求和与最大值下标、16 桶循环和全零直方图，均与 CPU 参考一致，详见[章节记录](../chapters/ch08-reduction-atomics/results/validation.md)。
+
+根 `build/outline` 重新配置、全目标构建，完整 CTest 共 20 项：19 项通过、0 项失败、1 项双卡测试因设备不足跳过；退出码 0，总时间 3.53 秒。Compute Sanitizer 仍不可用，Scan/Gather/Scatter 的 GPU 版本和原子竞争性能均未测。

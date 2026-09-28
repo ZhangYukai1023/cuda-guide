@@ -103,4 +103,4 @@ ctest --test-dir build/outline -R '^ch07_shared_memory$' --output-on-failure
 4. 线程 0 写 `tile[0]`，线程 7 读 `tile[0]`，只在读线程调用 `__syncthreads()` 可以吗？答：不可以，同一 Block 的参与线程必须按要求一致地到达该屏障。
 5. 本章的 8 个块部分和能用一个普通 `__syncthreads()` 直接合并吗？答：不能；它只协调一个 Block。可再启动一个 kernel 或使用其他明确支持的跨 Block 方案。
 
-下一章从这些部分和出发，学习归约、原子操作与直方图等基础并行模式。
+[下一章](../ch08-reduction-atomics/README.md)从这些部分和出发，学习归约、原子操作与直方图等基础并行模式。

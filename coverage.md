@@ -28,7 +28,7 @@
 | 22 均值与高斯滤波 | [正式第 22 章](chapters/ch22-mean-gaussian/README.md)；[pilot 均值](pilot/ch05-image-filtering/README.md) | 三种边界、直接/可分离高斯和共享 Halo 共 18 组通过 CPU 对照；性能未建立可信基线 |
 | 23 去噪与质量评价 | [正式第 23 章](chapters/ch23-denoising/README.md)；[pilot 中值](pilot/ch05-image-filtering/README.md) | 两种噪声、三种滤波通过 CPU 对照；PSNR/SSIM8 仅当前样本，不含无参考评价 |
 | 24 插值与几何重采样 | [正式第 24 章](chapters/ch24-image-resampling/README.md)；[pilot 缩放](pilot/ch06-image-resampling/README.md) | 最近邻/双线性/双三次/面积与 90° 旋转通过 CPU 对照；任意旋转和 NPP 对照未实现 |
-| 25 边缘、形态学、对比度 | 无 | 全章 |
+| 25 边缘、形态学、对比度 | [正式第 25 章](chapters/ch25-edges-morphology-contrast/README.md) | Sobel、形态学与直方图均衡化在 18 条默认路径及 PGM 输入上通过 CPU 对照；性能未建基线 |
 | 26 图像处理流水线 | [现有第 7 章](pilot/ch07-image-pipeline/README.md) | 多算子图像质量和真实吞吐量对照 |
 | 27 PyTorch 自定义算子 | 无 | 全章 |
 | 28 Softmax 与归一化 | [现有第 8 章 Softmax](pilot/ch08-ai-operators/README.md) | 归一化算子与更多维度 |

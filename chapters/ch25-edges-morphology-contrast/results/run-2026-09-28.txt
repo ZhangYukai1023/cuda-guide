@@ -1,0 +1,19 @@
+small-sobel 5x5 mismatches=0 kernel_ms=0.0967 task_ms=0.1451 PASS
+small-dilate 5x5 mismatches=0 kernel_ms=0.0095 task_ms=0.0284 PASS
+small-erode 5x5 mismatches=0 kernel_ms=0.0050 task_ms=0.0154 PASS
+small-open 5x5 mismatches=0 kernel_ms=0.0067 task_ms=0.0175 PASS
+small-close 5x5 mismatches=0 kernel_ms=0.0073 task_ms=0.0186 PASS
+small-equalized 5x5 mismatches=0 kernel_ms=0.0533 task_ms=0.0643 PASS
+constant-sobel 7x9 mismatches=0 kernel_ms=0.0040 task_ms=0.0230 PASS
+constant-dilate 7x9 mismatches=0 kernel_ms=0.0048 task_ms=0.0167 PASS
+constant-erode 7x9 mismatches=0 kernel_ms=0.0046 task_ms=0.0167 PASS
+constant-open 7x9 mismatches=0 kernel_ms=0.0062 task_ms=0.0166 PASS
+constant-close 7x9 mismatches=0 kernel_ms=0.0061 task_ms=0.0166 PASS
+constant-equalized 7x9 mismatches=0 kernel_ms=0.0214 task_ms=0.0316 PASS
+medium-sobel 257x193 mismatches=0 kernel_ms=0.0041 task_ms=0.0489 PASS
+medium-dilate 257x193 mismatches=0 kernel_ms=0.0041 task_ms=0.0338 PASS
+medium-erode 257x193 mismatches=0 kernel_ms=0.0041 task_ms=0.0319 PASS
+medium-open 257x193 mismatches=0 kernel_ms=0.0061 task_ms=0.0348 PASS
+medium-close 257x193 mismatches=0 kernel_ms=0.0061 task_ms=0.0344 PASS
+medium-equalized 257x193 mismatches=0 kernel_ms=0.0389 task_ms=0.0659 PASS
+chapter 25 image features: PASS

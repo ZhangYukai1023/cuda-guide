@@ -239,3 +239,7 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 ## 第 24 章加入后的验证
 
 2026-09-28 第 24 章独立配置、构建与 CTest 1/1 通过；十条默认重采样路径及生成 PGM 的可选输入放大均通过 CPU 对照。根 `build/outline` 重新配置、全目标构建与完整 CTest 37 项中 36 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.58 秒。图像输出和原始记录见[章节记录](../chapters/ch24-image-resampling/results/validation.md)。
+
+## 第 25 章加入后的验证
+
+2026-09-28 第 25 章独立配置、构建与 CTest 1/1 通过；Sobel、形态学及均衡化在三种尺寸共 18 组默认路径，以及生成 PGM 的可选输入路径均通过 CPU 逐字节对照。根 `build/outline` 重新配置、全目标构建与完整 CTest 38 项中 37 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.66 秒。原始输出和图像位置见[章节记录](../chapters/ch25-edges-morphology-contrast/results/validation.md)。

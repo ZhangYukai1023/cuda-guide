@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.24)
+project(cuda_ch09_correctness_validation LANGUAGES CXX CUDA)
+set(CMAKE_CUDA_STANDARD 17)
+set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+add_executable(correctness_validation correctness_validation.cu)
+target_compile_options(correctness_validation PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-lineinfo>)
+enable_testing()
+add_test(NAME ch09_correctness_validation COMMAND correctness_validation)

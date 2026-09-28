@@ -12,7 +12,7 @@
 | 6 内存层次与数据布局 | [正式第 6 章](chapters/ch06-memory-layout/README.md) | 连续/跨步、行跨度、AoS/SoA 与 Managed 已验证；性能分析后置 |
 | 7 共享内存与同步 | [正式第 7 章](chapters/ch07-shared-memory/README.md) | 块内交换、Warp 同步、分块转置、块内求和均已通过 CPU 对照；故障工具检查未测 |
 | 8 归约、原子操作和基础模式 | [正式第 8 章](chapters/ch08-reduction-atomics/README.md) | 两阶段整数归约、并列最大值下标、共享桶原子直方图已通过 CPU 对照；Scan/Gather/Scatter 为语义练习 |
-| 9 正确性与数值验证 | [公共验证代码](common/cuda_support.cuh) | 误差顺序、NaN/Inf、随机与极端输入 |
+| 9 正确性与数值验证 | [正式第 9 章](chapters/ch09-correctness-validation/README.md) | 空输入、确定性随机数据、组合容差、NaN/Inf、舍入顺序、半精度往返和大逻辑下标已验证 |
 | 10 调试工具与故障定位 | [现有第 4 章工具说明](pilot/ch04-engineering-and-timing/README.md) | 最小故障示例；工具缺失时如实注明未测 |
 | 11 先认识库 | 无 | Thrust、CUB、cuBLAS、NPP 的实际案例 |
 | 12 建立可信的性能基准 | [现有第 4 章计时](pilot/ch04-engineering-and-timing/README.md) | 多种输入规模、统计波动与 CPU 基线 |

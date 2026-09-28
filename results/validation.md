@@ -151,3 +151,9 @@ The following tests did not run:
 2026-09-28 同步第 8 章后，在 `build/ch08-reduction-standalone` 独立配置、构建、CTest，1/1 通过；手动运行长度 1/7/128/1003 的两阶段求和与最大值下标、16 桶循环和全零直方图，均与 CPU 参考一致，详见[章节记录](../chapters/ch08-reduction-atomics/results/validation.md)。
 
 根 `build/outline` 重新配置、全目标构建，完整 CTest 共 20 项：19 项通过、0 项失败、1 项双卡测试因设备不足跳过；退出码 0，总时间 3.53 秒。Compute Sanitizer 仍不可用，Scan/Gather/Scatter 的 GPU 版本和原子竞争性能均未测。
+
+## 第 9 章加入后的验证
+
+2026-09-28 同步第 9 章后，`build/ch09-correctness-standalone` 独立配置、构建、CTest 1/1 通过；手动运行空输入、长度 1/7/1003/4097、固定种子浮点、NaN/Inf、舍入顺序、半精度往返与大逻辑下标检查，结果见[章节记录](../chapters/ch09-correctness-validation/results/validation.md)。
+
+根 `build/outline` 重新配置、全目标构建及完整 CTest 通过：21 项中 20 项通过、0 项失败、1 项双卡测试因设备不足跳过，退出码 0，总时间 3.61 秒。章节容差只用于当前数据与运算，不宣称一般数值精度保证。

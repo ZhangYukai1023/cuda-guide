@@ -79,4 +79,4 @@ ctest --test-dir build/outline -R '^ch08_reduction_atomic$' --output-on-failure
 4. `[2,1,3]` 的 exclusive scan 是什么？答：`[0,2,3]`，每项不包含当前位置的值。
 5. Gather 的索引若越界应怎么办？答：先定义接口约定并检查或拒绝非法索引，不能直接访问输入数组之外的位置。
 
-下一章从 CPU 参考、边界输入、浮点误差和可复现随机测试建立更完整的正确性验证方法。
+[下一章](../ch09-correctness-validation/README.md)从 CPU 参考、边界输入、浮点误差和可复现随机测试建立更完整的正确性验证方法。

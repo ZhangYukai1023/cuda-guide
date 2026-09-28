@@ -32,6 +32,7 @@
 | [第 24 章：插值、缩放与几何重采样](chapters/ch24-image-resampling/README.md) | 最近邻、双线性、双三次、面积、90° 旋转 | 十条默认及 PGM 输入路径 CPU 对照通过 |
 | [第 25 章：边缘、形态学与对比度增强](chapters/ch25-edges-morphology-contrast/README.md) | Sobel、膨胀/腐蚀、开闭、直方图均衡化 | 18 条默认及 PGM 输入路径 CPU 对照通过 |
 | [第 26 章：完整图像处理流水线](chapters/ch26-image-pipeline/README.md) | PGM→中值→缩小→归一化，串行与双槽 | 合成与目录输入 CPU 对照通过；性能待复测 |
+| [第 27 章：张量与 PyTorch 自定义算子](chapters/ch27-pytorch-custom-op/README.md) | CUDA 扩展、当前 Stream、非连续输入与梯度 | 现有 PyTorch 环境独立构建与 GPU 检查通过 |
 
 其余大纲章节正在编写。逐章现有素材与缺口见 [覆盖核对](coverage.md)。
 
@@ -88,6 +89,7 @@ cuda-guide/
     ch24-image-resampling/
     ch25-edges-morphology-contrast/
     ch26-image-pipeline/
+    ch27-pytorch-custom-op/
     common/image_io.hpp
   pilot/
     ch02-thread-indexing/
@@ -138,7 +140,7 @@ python3 scripts/render_images.py
 
 ## 范围、来源与尚未验证的部分
 
-原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前正式正文已写至第 26 章；部分工具、依赖与性能路径仍未验证；先前 10 章压缩初版保留在 pilot/，章节安排与原大纲不一致。逐章差距见 [覆盖核对](coverage.md)。当前工作目录未发现适用的 AGENTS.md。
+原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前正式正文已写至第 27 章；部分工具、依赖与性能路径仍未验证；先前 10 章压缩初版保留在 pilot/，章节安排与原大纲不一致。逐章差距见 [覆盖核对](coverage.md)。当前工作目录未发现适用的 AGENTS.md。
 
 pilot 提供可运行的入门应用示例，38 章正文仍在编写。共享内存和归约已有示例；Tensor Core、cuBLAS/cuDNN 集成、一般仿射旋转、P2P、NCCL/MPI 只保留适用的扩展说明，没有冒充实现或实测。
 

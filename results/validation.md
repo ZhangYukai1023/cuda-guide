@@ -247,3 +247,9 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 ## 第 26 章加入后的验证
 
 2026-09-28 第 26 章独立配置、构建与 CTest 1/1 通过；合成六帧及生成 PGM 目录三帧的串行、双槽路径均通过 8 位预览和浮点张量 CPU 对照，输出 manifest 与小端 `.f32` 文件检查通过。根 `build/outline` 重新配置、全目标构建与完整 CTest 39 项中 38 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.76 秒。原始输出和性能限制见[章节记录](../chapters/ch26-image-pipeline/results/validation.md)。
+
+## 第 27 章 PyTorch 扩展验证
+
+2026-09-28 使用 zyk 现有 ComfyUI 虚拟环境 PyTorch `2.13.0+cu130` 和 nvcc 12.8 构建 `_C` 注册共享库成功；设置现有 Toolkit `lib64` 动态库路径后，前向、反向、非连续输入、当前 Stream、错误输入和 `opcheck` 全部通过。构建有 CUDA 版本差异警告，详情及两次环境故障的修复见[章节记录](../chapters/ch27-pytorch-custom-op/results/validation.md)。
+
+第 27 章单独由 PyTorch 构建和 Python 检查，不增加根 CTest 目标。根 `build/outline` 重新配置、全目标构建与完整 CTest 仍为 39 项中 38 项通过、1 项双 GPU 用例跳过、0 项失败，总时间 3.77 秒。

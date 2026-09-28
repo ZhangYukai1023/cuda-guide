@@ -1,0 +1,17 @@
+torch=2.13.0+cu130 torch_cuda=13.0 available=True
+scale: shape=(0,) dtype=torch.float32 PASS
+scale_relu: shape=(0,) dtype=torch.float32 PASS
+scale: shape=(7,) dtype=torch.float32 PASS
+scale_relu: shape=(7,) dtype=torch.float32 PASS
+scale: shape=(3, 5) dtype=torch.float32 PASS
+scale_relu: shape=(3, 5) dtype=torch.float32 PASS
+scale: shape=(1003,) dtype=torch.float32 PASS
+scale_relu: shape=(1003,) dtype=torch.float32 PASS
+noncontiguous_scale: shape=(3, 5) dtype=torch.float32 PASS
+noncontiguous_scale_relu: shape=(3, 5) dtype=torch.float32 PASS
+scale_relu_backward: shape=(4,) dtype=torch.float32 PASS
+scale_relu_finite_difference: PASS
+scale_backward: shape=(3,) dtype=torch.float32 PASS
+current_stream: shape=(17,) dtype=torch.float32 PASS
+opcheck: PASS
+chapter 27 custom operators: PASS

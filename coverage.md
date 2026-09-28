@@ -30,7 +30,7 @@
 | 24 插值与几何重采样 | [正式第 24 章](chapters/ch24-image-resampling/README.md)；[pilot 缩放](pilot/ch06-image-resampling/README.md) | 最近邻/双线性/双三次/面积与 90° 旋转通过 CPU 对照；任意旋转和 NPP 对照未实现 |
 | 25 边缘、形态学、对比度 | [正式第 25 章](chapters/ch25-edges-morphology-contrast/README.md) | Sobel、形态学与直方图均衡化在 18 条默认路径及 PGM 输入上通过 CPU 对照；性能未建基线 |
 | 26 图像处理流水线 | [正式第 26 章](chapters/ch26-image-pipeline/README.md)；[pilot 流水线](pilot/ch07-image-pipeline/README.md) | 合成六帧与 PGM 目录三帧的串行/双槽 CPU 对照通过；可信吞吐与重叠待空闲设备及工具复测 |
-| 27 PyTorch 自定义算子 | 无 | 全章 |
+| 27 PyTorch 自定义算子 | [正式第 27 章](chapters/ch27-pytorch-custom-op/README.md) | 在现有 PyTorch 2.13/CUDA 13 环境以 nvcc 12.8 独立构建并通过前向、梯度、非连续输入、当前 Stream 和 opcheck；跨版本未测 |
 | 28 Softmax 与归一化 | [现有第 8 章 Softmax](pilot/ch08-ai-operators/README.md) | 归一化算子与更多维度 |
 | 29 Tensor Core、GEMM、CUTLASS | [现有第 8 章直接 GEMM](pilot/ch08-ai-operators/README.md) | Tensor Core 与 CUTLASS；硬件能力需核验 |
 | 30 Attention 与推理 | 无 | 全章 |

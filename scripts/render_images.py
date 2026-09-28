@@ -38,10 +38,10 @@ def scaled(width, height, pixels):
 def main():
     root = Path(__file__).resolve().parents[1]
     count = 0
-    for path in sorted(root.glob("chapters/*/results/images/*.pgm")):
+    for path in sorted(root.glob("pilot/*/results/images/*.pgm")):
         png(path.with_suffix(".png"), *scaled(*read_pgm(path)))
         count += 1
-    folder = root / "chapters/ch05-image-filtering/results/images"
+    folder = root / "pilot/ch05-image-filtering/results/images"
     tiles = [scaled(*read_pgm(folder / (name + ".pgm")))
              for name in ("clean", "noisy", "box", "median")]
     w, h, _ = tiles[0]

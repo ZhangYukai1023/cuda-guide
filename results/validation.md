@@ -114,4 +114,10 @@ The following tests did not run:
   13 - ch10_two_devices (Skipped)
 ```
 
-第 2 章的 [验证记录](../chapters/ch02-thread-indexing/results/validation.md) 保存了三项 CPU 对照的实际输出。
+第 2 章的 [验证记录](../pilot/ch02-thread-indexing/results/validation.md) 保存了三项 CPU 对照的实际输出。
+
+## 按原大纲整理后的验证
+
+正式章节已建立第 1、2 章，原压缩版示例保存在 `pilot/`。使用新的 `build/outline` 目录完成配置与全目标构建，退出码均为 0。`ctest --test-dir build/outline --output-on-failure` 实测 14 项：13 项通过，1 项双 GPU 测试因仅一块可见 GPU 跳过，0 项失败。正式第 2 章的 `ch02_first_threads` 通过。
+
+另按 `chapters/ch02-first-thread/examples` 独立配置、构建并运行 CTest，1/1 通过。第 2 章程序与 CPU 预期结果的详细输出见 [该章验证记录](../chapters/ch02-first-thread/results/validation.md)。

@@ -1,6 +1,6 @@
 # 第 2 章：线程、下标与二维数据
 
-[全书导航](../../README.md) · [上一章](../ch01-getting-started/README.md) · [下一章](../ch03-memory-and-synchronization/README.md)
+[全书导航](../../README.md) · [上一章](../../chapters/ch01-getting-started/README.md) · [下一章](../ch03-memory-and-synchronization/README.md)
 
 ## 1. 从一个 GPU 线程开始
 
@@ -131,7 +131,7 @@ cmake --build build/all --target indexing -j2
 ./build/all/ch02/indexing
 ```
 
-也可单独配置本章：把上面 -S 改为 chapters/ch02-thread-indexing/examples，-B 改为 build/ch02-standalone，其他选项不变；程序位于该独立构建目录下。无需第三方图像或数学库。
+也可单独配置本章：把上面 -S 改为 pilot/ch02-thread-indexing/examples，-B 改为 build/ch02-standalone，其他选项不变；程序位于该独立构建目录下。无需第三方图像或数学库。
 
 本次实际输出如下。除计时数据可能随运行波动外，同一固定输入应得到这些结果或在注明容差内一致；最终错误数量应为 0：
 

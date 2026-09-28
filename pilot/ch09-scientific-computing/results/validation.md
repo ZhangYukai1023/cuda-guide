@@ -2,7 +2,7 @@
 
 验证日期：2026-09-28；主机 ubuntu2404；RTX 5060 Ti；驱动 595.84；nvcc 12.8.93；GCC 13.3.0；CMake 3.28.3。架构参数为 120，Release 构建，未使用 fast-math。
 
-命令：`./build/all/ch09/heat chapters/ch09-scientific-computing/results/images`。工作目录为项目根目录；退出码：0。
+命令：`./build/all/ch09/heat pilot/ch09-scientific-computing/results/images`。工作目录为项目根目录；退出码：0。
 
 ```text
 heat: n=9 max_abs_error=7.15255737e-07 mismatches=0 PASS

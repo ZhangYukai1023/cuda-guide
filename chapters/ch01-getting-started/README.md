@@ -140,7 +140,7 @@ int main() {
 cd /data2/cuda-guide
 mkdir -p build/ch01-direct
 /home/zhangyukai/.local/cuda/bin/nvcc -std=c++17 -O2 -lineinfo -arch=sm_120 \
-  chapters/ch01-getting-started/examples/device_info.cu \
+  pilot/ch01-getting-started/examples/device_info.cu \
   -o build/ch01-direct/device_info
 ./build/ch01-direct/device_info
 ```
@@ -247,7 +247,7 @@ int main() {
 
 ```bash
 /home/zhangyukai/.local/cuda/bin/nvcc -std=c++17 -O2 -lineinfo -arch=sm_120 \
-  chapters/ch01-getting-started/examples/vector_add.cu \
+  pilot/ch01-getting-started/examples/vector_add.cu \
   -o build/ch01-direct/vector_add
 ./build/ch01-direct/vector_add
 ```
@@ -281,7 +281,7 @@ n=1000, mismatches=0, PASS
 直接 nvcc 命令适合理解编译过程。文件增多后可以使用 [CMakeLists.txt](examples/CMakeLists.txt)，避免手动重复拼写源文件。
 
 ```bash
-cmake -S chapters/ch01-getting-started/examples -B build/ch01-cmake \
+cmake -S pilot/ch01-getting-started/examples -B build/ch01-cmake \
   -DCMAKE_CUDA_COMPILER=/home/zhangyukai/.local/cuda/bin/nvcc \
   -DCMAKE_CUDA_ARCHITECTURES=120 \
   -DCMAKE_BUILD_TYPE=Release
@@ -359,4 +359,4 @@ nvidia-smi 显示 CUDA 13.2，而 nvcc 显示 12.8，应在环境记录里写什
 
 已完成设备查询、显式内存复制、整数数组 kernel、CPU 对照、直接编译和 CMake 测试。未执行 Compute Sanitizer，也未开展性能实验。
 
-下一章解释线程下标与二维布局，再进入内存、工程实践及应用。继续阅读 [第 2 章](../ch02-thread-indexing/README.md)。
+下一章解释线程下标与二维布局，再进入内存、工程实践及应用。继续阅读 [第 2 章](../ch02-first-thread/README.md)。

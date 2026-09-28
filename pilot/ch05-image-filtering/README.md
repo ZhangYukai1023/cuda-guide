@@ -96,7 +96,7 @@ cmake --build build/all --target filtering -j2
 ./build/all/ch05/filtering build/ch05-images
 ```
 
-也可单独配置本章：把上面 -S 改为 chapters/ch05-image-filtering/examples，-B 改为 build/ch05-standalone，其他选项不变；程序位于该独立构建目录下。无需第三方图像或数学库。
+也可单独配置本章：把上面 -S 改为 pilot/ch05-image-filtering/examples，-B 改为 build/ch05-standalone，其他选项不变；程序位于该独立构建目录下。无需第三方图像或数学库。
 
 本次实际输出如下。除计时数据可能随运行波动外，同一固定输入应得到这些结果或在注明容差内一致；最终错误数量应为 0：
 

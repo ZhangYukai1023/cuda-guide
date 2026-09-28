@@ -1,0 +1,8 @@
+serial frame=0 source=clean.pgm preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.1004 frame_task_ms=0.1256 PASS
+serial frame=1 source=gaussian-noise.pgm preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0075 frame_task_ms=0.0149 PASS
+serial frame=2 source=salt-pepper.pgm preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0082 frame_task_ms=0.0161 PASS
+double_slot frame=0 source=clean.pgm preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0062 frame_task_ms=0.0336 PASS
+double_slot frame=1 source=gaussian-noise.pgm preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0081 frame_task_ms=0.0315 PASS
+double_slot frame=2 source=salt-pepper.pgm preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0086 frame_task_ms=0.0162 PASS
+frames=3 source=64x64 output=32x32 serial_batch_ms=0.1627 double_slot_batch_ms=0.0546 device_buffer_bytes_per_slot=13312 file_read_ms=0.0454 file_write_ms=0.1289
+chapter 26 image pipeline: PASS

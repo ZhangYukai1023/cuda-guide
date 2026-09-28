@@ -1,0 +1,14 @@
+serial frame=0 source=synthetic-0 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.1108 frame_task_ms=0.1383 PASS
+serial frame=1 source=synthetic-1 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0074 frame_task_ms=0.0156 PASS
+serial frame=2 source=synthetic-2 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0063 frame_task_ms=0.0130 PASS
+serial frame=3 source=synthetic-3 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0067 frame_task_ms=0.0226 PASS
+serial frame=4 source=synthetic-4 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0057 frame_task_ms=0.0126 PASS
+serial frame=5 source=synthetic-5 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0056 frame_task_ms=0.0120 PASS
+double_slot frame=0 source=synthetic-0 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0073 frame_task_ms=0.0350 PASS
+double_slot frame=1 source=synthetic-1 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0078 frame_task_ms=0.0252 PASS
+double_slot frame=2 source=synthetic-2 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0070 frame_task_ms=0.0228 PASS
+double_slot frame=3 source=synthetic-3 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0076 frame_task_ms=0.0216 PASS
+double_slot frame=4 source=synthetic-4 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0083 frame_task_ms=0.0274 PASS
+double_slot frame=5 source=synthetic-5 preview_mismatches=0 norm_mismatches=0 norm_max_error=0 kernel_ms=0.0088 frame_task_ms=0.0157 PASS
+frames=6 source=65x49 output=33x25 serial_batch_ms=0.2250 double_slot_batch_ms=0.0952 device_buffer_bytes_per_slot=10495 file_read_ms=0.0053 file_write_ms=7.6951
+chapter 26 image pipeline: PASS

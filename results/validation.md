@@ -1,0 +1,103 @@
+# 全书验证记录
+
+日期：2026-09-28（Asia/Shanghai）。工作目录：/data2/cuda-guide。主机名：ubuntu2404。
+
+## 环境
+
+RTX 5060 Ti，计算能力 12.0，驱动 595.84；CUDA nvcc 12.8.93（/home/zhangyukai/.local/cuda/bin/nvcc）；GCC 13.3.0；CMake 3.28.3。初始详细记录见 [第 1 章环境记录](../chapters/ch01-getting-started/results/environment.md)。
+
+没有安装或升级工具。Compute Sanitizer、cuda-gdb、nsys、ncu 在已检查路径中未找到。只有一块可见 GPU。
+
+## 构建和测试命令
+
+```bash
+cmake -S . -B build/all \
+  -DCMAKE_CUDA_COMPILER=/home/zhangyukai/.local/cuda/bin/nvcc \
+  -DCMAKE_CUDA_ARCHITECTURES=120 -DCMAKE_BUILD_TYPE=Release
+cmake --build build/all -j2
+ctest --test-dir build/all --output-on-failure
+```
+
+首次配置和编译成功；最终构建及测试退出码为 0。以下为最后一次构建与测试的输出尾段（早期构建进度省略）：
+
+```text
+[ 50%] Linking CUDA executable benchmark
+[ 50%] Built target benchmark
+[ 54%] Building CUDA object ch06/CMakeFiles/resampling.dir/resampling.cu.o
+[ 59%] Linking CUDA executable filtering
+[ 59%] Built target filtering
+[ 63%] Building CUDA object ch07/CMakeFiles/pipeline.dir/pipeline.cu.o
+[ 68%] Linking CUDA executable resampling
+[ 68%] Built target resampling
+[ 72%] Building CUDA object ch08/CMakeFiles/operators.dir/operators.cu.o
+[ 77%] Linking CUDA executable pipeline
+[ 77%] Built target pipeline
+[ 81%] Building CUDA object ch09/CMakeFiles/heat.dir/heat.cu.o
+[ 86%] Linking CUDA executable operators
+[ 86%] Built target operators
+[ 90%] Building CUDA object ch10/CMakeFiles/multi_gpu.dir/multi_gpu.cu.o
+[ 95%] Linking CUDA executable heat
+[ 95%] Built target heat
+[100%] Linking CUDA executable multi_gpu
+[100%] Built target multi_gpu
+Internal ctest changing into directory: /data2/cuda-guide/build/all
+Test project /data2/cuda-guide/build/all
+      Start  1: device_info
+ 1/12 Test  #1: device_info ......................   Passed    0.12 sec
+      Start  2: vector_add
+ 2/12 Test  #2: vector_add .......................   Passed    0.21 sec
+      Start  3: ch2_indexing
+ 3/12 Test  #3: ch2_indexing .....................   Passed    0.19 sec
+      Start  4: ch3_transpose
+ 4/12 Test  #4: ch3_transpose ....................   Passed    0.21 sec
+      Start  5: ch4_benchmark
+ 5/12 Test  #5: ch4_benchmark ....................   Passed    0.24 sec
+      Start  6: ch5_filtering
+ 6/12 Test  #6: ch5_filtering ....................   Passed    0.20 sec
+      Start  7: ch6_resampling
+ 7/12 Test  #7: ch6_resampling ...................   Passed    0.18 sec
+      Start  8: ch7_pipeline
+ 8/12 Test  #8: ch7_pipeline .....................   Passed    0.19 sec
+      Start  9: ch8_operators
+ 9/12 Test  #9: ch8_operators ....................   Passed    0.19 sec
+      Start 10: ch9_heat
+10/12 Test #10: ch9_heat .........................   Passed    0.19 sec
+      Start 11: ch10_multi_gpu
+11/12 Test #11: ch10_multi_gpu ...................   Passed    0.18 sec
+      Start 12: ch10_two_devices
+12/12 Test #12: ch10_two_devices .................***Skipped   0.08 sec
+
+100% tests passed, 0 tests failed out of 12
+
+Total Test time (real) =   2.18 sec
+
+The following tests did not run:
+	 12 - ch10_two_devices (Skipped)
+```
+
+统计为 11 项通过、1 项跳过、0 项失败。双卡跳过不代表已验证。单独运行：
+
+```text
+$ ./build/all/ch10/multi_gpu --require-two
+SKIP: two CUDA devices required
+exit code: 77
+```
+
+## 独立构建检查
+
+另外按第 5 章提供的独立构建方式配置 build/ch05-standalone，成功构建并通过该章 CTest。没有声称每个独立目录都单独配置过；全书统一构建覆盖全部目标。
+
+## 数值与图像
+
+各章 results/validation.md 保留独立运行的输出，均为实际结果。图像章节的输入和输出由程序生成，PGM 与 SVG 已归档。scripts/render_images.py 从归档 PGM 生成 12 张 PNG 及 1 张去噪对照图；仅使用 Python 标准库。对照图已人工查看，左上参考、右上加噪、左下均值、右下中值，与程序数值结果一致。
+
+CPU 参考覆盖下标、转置、仿射计算、均值与中值、最近邻与双线性、平移、双缓冲多帧、矩阵乘法、Softmax、热扩散及单卡分片。浮点示例检查绝对/相对误差和非有限值，细节见各章。
+
+只有第 4 章测量性能：5 次预热、100 次重复，分别记录 CUDA event 序列均值与已分配缓冲区下 H2D+kernel+D2H 的端到端均值。其他章节及 CTest 的进程时间不作为性能结论。
+
+## 限制
+
+- 未执行 Compute Sanitizer、CUDA 专用断点调试或 profiler。
+- 未验证真实双卡、P2P、NCCL/MPI 或多卡性能。
+- 原始 38 章大纲现已同步到仓库的 outline.md。当前 10 章为压缩初版，章节安排与原大纲不一致。
+- Git 仓库已初始化，尚未建立远程仓库。

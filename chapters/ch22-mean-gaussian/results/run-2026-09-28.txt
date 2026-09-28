@@ -1,0 +1,37 @@
+mean3_zero width=5 height=5 mismatches=0 PASS
+mean3_zero kernel_ms=0.0989 task_ms=0.1431 (single run; no file I/O)
+mean3_replicate width=5 height=5 mismatches=0 PASS
+mean3_replicate kernel_ms=0.0085 task_ms=0.0223 (single run; no file I/O)
+mean3_reflect101 width=5 height=5 mismatches=0 PASS
+mean3_reflect101 kernel_ms=0.0051 task_ms=0.0152 (single run; no file I/O)
+gaussian5_direct width=5 height=5 mismatches=0 PASS
+gaussian5_direct kernel_ms=0.0181 task_ms=0.0285 (single run; no file I/O)
+gaussian5_separable width=5 height=5 mismatches=0 PASS
+gaussian5_separable kernel_ms=0.0204 task_ms=0.0308 (single run; no file I/O)
+mean3_shared width=5 height=5 mismatches=0 PASS
+mean3_shared kernel_ms=0.0103 task_ms=0.0210 (single run; no file I/O)
+mean3_zero width=17 height=19 mismatches=0 PASS
+mean3_zero kernel_ms=0.0076 task_ms=0.0311 (single run; no file I/O)
+mean3_replicate width=17 height=19 mismatches=0 PASS
+mean3_replicate kernel_ms=0.0040 task_ms=0.0209 (single run; no file I/O)
+mean3_reflect101 width=17 height=19 mismatches=0 PASS
+mean3_reflect101 kernel_ms=0.0037 task_ms=0.0139 (single run; no file I/O)
+gaussian5_direct width=17 height=19 mismatches=0 PASS
+gaussian5_direct kernel_ms=0.0065 task_ms=0.0169 (single run; no file I/O)
+gaussian5_separable width=17 height=19 mismatches=0 PASS
+gaussian5_separable kernel_ms=0.0117 task_ms=0.0219 (single run; no file I/O)
+mean3_shared width=17 height=19 mismatches=0 PASS
+mean3_shared kernel_ms=0.0046 task_ms=0.0148 (single run; no file I/O)
+mean3_zero width=513 height=257 mismatches=0 PASS
+mean3_zero kernel_ms=0.0061 task_ms=0.0663 (single run; no file I/O)
+mean3_replicate width=513 height=257 mismatches=0 PASS
+mean3_replicate kernel_ms=0.0061 task_ms=0.0536 (single run; no file I/O)
+mean3_reflect101 width=513 height=257 mismatches=0 PASS
+mean3_reflect101 kernel_ms=0.0082 task_ms=0.0479 (single run; no file I/O)
+gaussian5_direct width=513 height=257 mismatches=0 PASS
+gaussian5_direct kernel_ms=0.0143 task_ms=0.0531 (single run; no file I/O)
+gaussian5_separable width=513 height=257 mismatches=0 PASS
+gaussian5_separable kernel_ms=0.0061 task_ms=0.0461 (single run; no file I/O)
+mean3_shared width=513 height=257 mismatches=0 PASS
+mean3_shared kernel_ms=0.0061 task_ms=0.0587 (single run; no file I/O)
+chapter 22 mean and Gaussian: PASS

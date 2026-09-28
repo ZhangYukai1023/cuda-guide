@@ -6,3 +6,7 @@ add_executable(indexing indexing.cu)
 target_compile_options(indexing PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-lineinfo>)
 enable_testing()
 add_test(NAME ch2_indexing COMMAND indexing)
+
+add_executable(single_thread single_thread.cu)
+target_compile_options(single_thread PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-lineinfo>)
+add_test(NAME ch2_single_thread COMMAND single_thread)

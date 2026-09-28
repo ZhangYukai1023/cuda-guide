@@ -7,7 +7,7 @@
 | 章节 | 内容 | 验证状态 |
 | --- | --- | --- |
 | [第 1 章：认识 CUDA，准备实验环境](chapters/ch01-getting-started/README.md) | 环境、设备查询、数组加法 | CPU 对照通过 |
-| [第 2 章：线程、下标与二维数据](chapters/ch02-thread-indexing/README.md) | 一维步长循环、二维下标与边界 | CPU 对照通过 |
+| [第 2 章：线程、下标与二维数据](chapters/ch02-thread-indexing/README.md) | 单线程写值与标量相加、一维步长循环、二维下标与边界 | CPU 对照通过 |
 | [第 3 章：内存访问与块内同步](chapters/ch03-memory-and-synchronization/README.md) | 直接转置、共享内存、屏障 | CPU 对照通过 |
 | [第 4 章：工程组织、错误处理与性能测量](chapters/ch04-engineering-and-timing/README.md) | RAII、错误检查、预热与两种计时 | CPU 对照通过 |
 | [第 5 章：图像滤波与去噪](chapters/ch05-image-filtering/README.md) | 均值、中值、边界、效果图与 MSE | CPU 对照通过 |
@@ -60,7 +60,7 @@ ctest --test-dir build/all --output-on-failure
 
 本机 GPU 为 RTX 5060 Ti（计算能力 12.0），驱动 595.84，nvcc 12.8.93，GCC 13.3.0，CMake 3.28.3。nvcc 未加入默认 PATH，因此使用绝对路径。其他机器需重新选择工具路径与目标架构。没有自动安装或升级驱动、CUDA 或依赖。
 
-当前统一验证：11 项通过，1 项因没有第二块 GPU 跳过，0 项失败。不能把 CTest 的“100% tests passed”解释成双卡也通过。详情见 [全书验证记录](results/validation.md) 和各章 results/validation.md。
+当前统一验证：12 项通过，1 项因没有第二块 GPU 跳过，0 项失败。不能把 CTest 的“100% tests passed”解释成双卡也通过。详情见 [全书验证记录](results/validation.md) 和各章 results/validation.md。
 
 ## 图像结果
 
@@ -82,7 +82,7 @@ python3 scripts/render_images.py
 
 ## 范围、来源与尚未验证的部分
 
-原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前 10 章为先前形成的压缩初版，章节安排与原大纲不一致；后续编写以原大纲为依据。当前工作目录未发现适用的 AGENTS.md。
+原始 38 章大纲现已同步到 [outline.md](outline.md)，校验值与本机源文件一致。当前 10 章为先前形成的压缩初版，章节安排与原大纲不一致；后续编写以原大纲为依据。逐章差距见 [覆盖核对](coverage.md)。当前工作目录未发现适用的 AGENTS.md。
 
 本版是完整的入门应用学习路径，不是所有 CUDA 技术的百科。共享内存和归约已有示例；Tensor Core、cuBLAS/cuDNN 集成、一般仿射旋转、P2P、NCCL/MPI 只保留适用的扩展说明，没有冒充实现或实测。
 

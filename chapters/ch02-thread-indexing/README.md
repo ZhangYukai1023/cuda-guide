@@ -2,7 +2,45 @@
 
 [全书导航](../../README.md) · [上一章](../ch01-getting-started/README.md) · [下一章](../ch03-memory-and-synchronization/README.md)
 
-## 1. 先给每个元素找到负责它的线程
+## 1. 从一个 GPU 线程开始
+
+先看三个可以手算的任务：一个线程写入 42；一个线程把 7 和 5 相加得到 12；然后让同一线程块的 8 个线程各写自己的编号，结果是 `[0,1,2,3,4,5,6,7]`。前两步只有一个 GPU 线程，不需要先理解 Grid-stride loop。
+
+完整源码在 [single_thread.cu](examples/single_thread.cu)。`__global__` 声明由 CPU 发起、在 GPU 上执行的函数。`<<<1, 1>>>` 表示启动一个 Block，其中只有一个线程；函数参数里的设备指针指向 GPU 内存。CPU 不能把普通主机指针直接传给本例 kernel 并期待它可用。
+
+```cpp
+__global__ void write_42(int* out) { out[0] = 42; }
+// 主机代码：
+DeviceBuffer<int> one(1);              // 内部调用 cudaMalloc
+write_42<<<1, 1>>>(one.data);          // 提交 kernel
+CUDA_CHECK(cudaGetLastError());        // 检查提交错误
+CUDA_CHECK(cudaDeviceSynchronize());   // 等待执行并检查异步错误
+verify("write_42", one.download(), std::vector<int>{42}); // 内部调用 cudaMemcpy
+// 离开作用域时 DeviceBuffer 调用 cudaFree
+```
+
+这些辅助函数的完整实现放在 [cuda_support.cuh](../../common/cuda_support.cuh)。按顺序可看到 `cudaMalloc` 申请设备空间、`cudaMemcpy` 取回结果、`cudaFree` 释放资源。`cudaGetLastError` 只能检查启动时已经报告的错误；kernel 执行中的错误还需要在同步点检查。`verify` 与 CPU 手算值逐项比较，出错时程序返回非零。
+
+递进的 `add_scalars<<<1,1>>>(7,5,one.data)` 仍只有一个线程；`write_ids<<<1,8>>>` 才开始让多个线程各写一个位置。这里的 `threadIdx.x` 是块内编号 0 到 7，只有一个 Block 时也等于本例的全局编号。后文再处理多个 Block。
+
+在项目根目录执行：
+
+```bash
+cmake --build build/all --target single_thread -j2
+./build/all/ch02/single_thread
+```
+
+实际输出：
+
+```text
+write_42: n=1 max_abs_error=0 mismatches=0 PASS
+add_scalars: n=1 max_abs_error=0 mismatches=0 PASS
+write_ids: n=8 max_abs_error=0 mismatches=0 PASS
+```
+
+练习：把 `add_scalars` 的输入改成 `-3` 和 `9`，先预测输出再编译运行。参考答案为 `6`；同时把 CPU 参考值改为 `6`，否则正确性检查会按旧预期报错。
+
+## 2. 先给每个元素找到负责它的线程
 
 第 1 章用 128 个线程处理 8 个数，但线程不总是只处理一个元素。设有 10 个元素、只启动 4 个线程，可以这样分工：
 
@@ -27,7 +65,7 @@ for (int i = blockIdx.x*blockDim.x + threadIdx.x;
 
 n=0 在主机端直接跳过启动。CUDA 不需要为一个空任务启动零个块；清楚处理空输入比依赖特殊启动参数更可靠。源码使用 int 下标，因为测试数据很小。处理超过 int 范围的数据时，应同时检查索引、乘积、字节数和网格尺寸的类型。
 
-## 2. 从一维数组走到二维图像
+## 3. 从一维数组走到二维图像
 
 设图像宽 3、高 2：
 
@@ -51,13 +89,13 @@ if (x < width && y < height)
 
 二维 block 的 x 方向在线性线程编号中变化最快，因此把 x 对应连续像素也是后续分析内存访问的自然起点。线程块的大小不等于图像大小，块的实际执行顺序也不应成为算法的正确性前提。
 
-## 3. 如何阅读本章源码
+## 4. 如何阅读本章源码
 
 本章开始把重复代码放入 [cuda_support.cuh](../../common/cuda_support.cuh)。它也是完整示例的一部分，不能只复制单个 .cu 到别处编译。DeviceBuffer 申请设备数组，upload/download 传输数据；CUDA_CHECK 报告调用位置；verify 对照 CPU 参考并在不一致时使程序失败。其 C++ 资源管理细节在第 4 章讲解，初读只需把它们当作有明确职责的小工具。
 
 核函数与 CPU 参考实现分别生成结果，逐项比较整数，要求误差为 0。长度 0 的 PASS 仅代表空输入处理正确，不表示 GPU 执行了计算。二维小例实际打印 0 1 2 100 101 102。
 
-## 4. 常见错误
+## 5. 常见错误
 
 - 把 blockIdx 当作全局元素下标，导致不同线程重复写同一位置。
 - 把二维偏移写成 y*height+x；方形图像可能掩盖这个错误，所以要测试 37×19。
@@ -65,7 +103,7 @@ if (x < width && y < height)
 - 向上取整计算块数后忘记边界检查。启动参数覆盖数据，不意味着每个线程都有有效元素。
 - 认为某个线程块一定先完成，再让其他块读取它的中间结果。普通启动没有这种保证。
 
-## 5. 练习与参考答案
+## 6. 练习与参考答案
 
 1. 5 个线程用步长循环处理 12 项，线程 1 处理哪些下标？
    答：1、6、11；线程 2 处理 2、7，不能访问 12。
@@ -80,7 +118,7 @@ if (x < width && y < height)
 
 ## 构建、运行与实测输出
 
-完整源码：[indexing.cu](examples/indexing.cu)；构建定义：[CMakeLists.txt](examples/CMakeLists.txt)。公共依赖也在本仓库，不需要复制未提供的代码。
+下标与二维示例源码：[indexing.cu](examples/indexing.cu)；单线程示例：[single_thread.cu](examples/single_thread.cu)；构建定义：[CMakeLists.txt](examples/CMakeLists.txt)。公共依赖也在本仓库，不需要复制未提供的代码。
 
 在项目根目录执行（首次配置后可重复构建）：
 

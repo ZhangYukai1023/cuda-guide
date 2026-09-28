@@ -18,7 +18,7 @@ cmake --build build/all -j2
 ctest --test-dir build/all --output-on-failure
 ```
 
-首次配置和编译成功；最终构建及测试退出码为 0。以下为最后一次构建与测试的输出尾段（早期构建进度省略）：
+首次配置和编译成功。以下为加入单线程示例之前的构建与测试输出尾段（早期构建进度省略）：
 
 ```text
 [ 50%] Linking CUDA executable benchmark
@@ -75,7 +75,7 @@ The following tests did not run:
 	 12 - ch10_two_devices (Skipped)
 ```
 
-统计为 11 项通过、1 项跳过、0 项失败。双卡跳过不代表已验证。单独运行：
+初始记录统计为 11 项通过、1 项跳过、0 项失败。双卡跳过不代表已验证。单独运行：
 
 ```text
 $ ./build/all/ch10/multi_gpu --require-two
@@ -101,3 +101,17 @@ CPU 参考覆盖下标、转置、仿射计算、均值与中值、最近邻与�
 - 未验证真实双卡、P2P、NCCL/MPI 或多卡性能。
 - 原始 38 章大纲现已同步到仓库的 outline.md。当前 10 章为压缩初版，章节安排与原大纲不一致。
 - Git 仓库已初始化，尚未建立远程仓库。
+
+## 单线程示例加入后的重新验证
+
+加入第 2 章 `single_thread` 目标后，重新配置、构建全书并执行 CTest，命令退出码均为 0。当前总数为 13 项：12 项通过，1 项双卡测试因设备不足跳过。新增测试输出：
+
+```text
+Start  4: ch2_single_thread
+4/13 Test  #4: ch2_single_thread ................   Passed
+100% tests passed, 0 tests failed out of 13
+The following tests did not run:
+  13 - ch10_two_devices (Skipped)
+```
+
+第 2 章的 [验证记录](../chapters/ch02-thread-indexing/results/validation.md) 保存了三项 CPU 对照的实际输出。

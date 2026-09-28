@@ -99,4 +99,4 @@ irregular_block128: predicate_mixed_warps=32 (host model, not measured branch in
 4. 把分组输入改为前 16 项正、后 48 项负，两个 Warp 中几个同时含正负？答：第一个 Warp 混合，第二个全负，共 1 个。
 5. 长度 1003、每块 64 线程至少需要几个 Block？改为每块 128 呢？答：分别是 16 个和 8 个。两种都必须保留 `i<n` 边界检查。
 
-下一章将把线程与实际内存位置对应起来，比较连续、跨步和 AoS/SoA 数据布局。
+[下一章](../ch06-memory-layout/README.md)将把线程与实际内存位置对应起来，比较连续、跨步和 AoS/SoA 数据布局。

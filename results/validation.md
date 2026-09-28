@@ -133,3 +133,9 @@ The following tests did not run:
 ## 第 5 章加入后的验证
 
 重新构建并运行 `ctest --test-dir build/outline --output-on-failure`，实测 17 项：16 项通过，1 项双 GPU 测试因只有一块可见 GPU 跳过，0 项失败。新增 `ch05_warp_paths` 测试通过。独立构建目录为 `build/ch05-warp-standalone`，该章 CTest 1/1 通过。`build/ch05-standalone` 原先用于 pilot 图像章节，不能复用其 CMake 缓存；没有删除旧构建产物。见 [第 5 章验证记录](../chapters/ch05-warp-execution/results/validation.md)。
+
+## 第 6 章加入后的验证
+
+2026-09-28 在 `codex/align-outline-38` 分支上重新配置并构建 `build/outline` 全目标，命令退出码均为 0。完整运行 `ctest --test-dir build/outline --output-on-failure --timeout 120`，退出码 0：18 项测试中 17 项通过、0 项失败、1 项 `ch10_two_devices` 因仅一张 GPU 跳过；新增 `ch06_memory_layout` 通过，总时间 3.28 秒。此前一次 CTest 在第 2 项期间因 SSH/TCP 失联中断，未用作通过证据。
+
+第 6 章另在 `build/ch06-layout-standalone` 独立配置、构建、运行 CTest，1/1 通过；手动运行可执行文件，连续/跨步、行跨度、AoS/SoA、显式传输和 Managed 11 行 CPU 对照均为 `mismatches=0 PASS`，详情见[本章验证记录](../chapters/ch06-memory-layout/results/validation.md)。没有测量缓存、带宽或页面迁移；没有安装新工具。

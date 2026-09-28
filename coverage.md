@@ -9,7 +9,7 @@
 | 3 从线程编号到数组计算 | [正式第 3 章](chapters/ch03-array-indexing/README.md) | 一维与二维基础已完成；可扩展更大索引范围 |
 | 4 管理数据、内存和资源 | [正式第 4 章](chapters/ch04-memory-resources/README.md) | 平方、复用与打包已完成；更多传输规模对照可扩展 |
 | 5 执行模型与 Warp | [正式第 5 章](chapters/ch05-warp-execution/README.md) | 正确性与谓词分布已验证；性能分析后置 |
-| 6 内存层次与数据布局 | [现有第 3 章](pilot/ch03-memory-and-synchronization/README.md) | AoS/SoA、跨步访问、Unified Memory 对照 |
+| 6 内存层次与数据布局 | [正式第 6 章](chapters/ch06-memory-layout/README.md) | 连续/跨步、行跨度、AoS/SoA 与 Managed 已验证；性能分析后置 |
 | 7 共享内存与同步 | [现有第 3 章转置示例](pilot/ch03-memory-and-synchronization/README.md) | 块内求和与同步故障定位 |
 | 8 归约、原子操作和基础模式 | [现有第 8 章部分归约](pilot/ch08-ai-operators/README.md) | 独立归约、原子、直方图、Scan |
 | 9 正确性与数值验证 | [公共验证代码](common/cuda_support.cuh) | 误差顺序、NaN/Inf、随机与极端输入 |

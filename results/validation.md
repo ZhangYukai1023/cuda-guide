@@ -235,3 +235,7 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 ## 第 23 章加入后的验证
 
 2026-09-28 第 23 章独立配置、构建与 CTest 1/1 通过；两类噪声和三种滤波共六条 GPU 路径通过 CPU 对照，生成的 PGM 再作可选输入也通过。根 `build/outline` 重新配置、全目标构建与完整 CTest 36 项中 35 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.46 秒。固定样本质量指标、完整 stdout 与图像位置见[章节记录](../chapters/ch23-denoising/results/validation.md)。
+
+## 第 24 章加入后的验证
+
+2026-09-28 第 24 章独立配置、构建与 CTest 1/1 通过；十条默认重采样路径及生成 PGM 的可选输入放大均通过 CPU 对照。根 `build/outline` 重新配置、全目标构建与完整 CTest 37 项中 36 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.58 秒。图像输出和原始记录见[章节记录](../chapters/ch24-image-resampling/results/validation.md)。

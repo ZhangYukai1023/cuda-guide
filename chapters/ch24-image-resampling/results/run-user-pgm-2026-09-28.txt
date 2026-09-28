@@ -1,0 +1,12 @@
+nearest-4to7 4x4 -> 7x5 max_error=0 beyond_tolerance=0 kernel_ms=0.1108 task_ms=0.1560 PASS
+bilinear-4to7 4x4 -> 7x5 max_error=0 beyond_tolerance=0 kernel_ms=0.0083 task_ms=0.0259 PASS
+bicubic-4to7 4x4 -> 7x5 max_error=0 beyond_tolerance=0 kernel_ms=0.0067 task_ms=0.0189 PASS
+rotate90-4x4 4x4 -> 4x4 max_error=0 beyond_tolerance=0 kernel_ms=0.0061 task_ms=0.0179 PASS
+checker-nearest-3x3 8x8 -> 3x3 max_error=0 beyond_tolerance=0 kernel_ms=0.0052 task_ms=0.0170 PASS
+checker-area-3x3 8x8 -> 3x3 max_error=0 beyond_tolerance=0 kernel_ms=0.0072 task_ms=0.0181 PASS
+constant-nearest 5x3 -> 7x5 max_error=0 beyond_tolerance=0 kernel_ms=0.0046 task_ms=0.0153 PASS
+constant-bilinear 5x3 -> 7x5 max_error=0 beyond_tolerance=0 kernel_ms=0.0122 task_ms=0.0233 PASS
+constant-bicubic 5x3 -> 7x5 max_error=0 beyond_tolerance=0 kernel_ms=0.0047 task_ms=0.0164 PASS
+constant-area 5x3 -> 7x5 max_error=0 beyond_tolerance=0 kernel_ms=0.0052 task_ms=0.0162 PASS
+user-bilinear-2x 8x8 -> 16x16 max_error=0 beyond_tolerance=0 kernel_ms=0.0049 task_ms=0.0171 PASS
+chapter 24 image resampling: PASS

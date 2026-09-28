@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.24)
+project(cuda_ch04_memory_resources LANGUAGES CXX CUDA)
+set(CMAKE_CUDA_STANDARD 17)
+set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+add_executable(memory_resources memory_resources.cu)
+target_compile_options(memory_resources PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-lineinfo>)
+enable_testing()
+add_test(NAME ch04_memory_resources COMMAND memory_resources)

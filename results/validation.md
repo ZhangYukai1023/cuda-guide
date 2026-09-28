@@ -125,3 +125,7 @@ The following tests did not run:
 ## 第 3 章加入后的验证
 
 重新构建并运行 `ctest --test-dir build/outline --output-on-failure`，实测 15 项：14 项通过，1 项双 GPU 测试跳过，0 项失败。新增 `ch03_array_indexing` 测试通过。另按 `chapters/ch03-array-indexing/examples` 独立配置、构建并运行 CTest，1/1 通过。第 3 章的整数 CPU 对照记录见 [该章验证记录](../chapters/ch03-array-indexing/results/validation.md)。
+
+## 第 4 章加入后的验证
+
+重新构建并运行 `ctest --test-dir build/outline --output-on-failure`，实测 16 项：15 项通过，1 项双 GPU 测试因只有一块可见 GPU 跳过，0 项失败。新增 `ch04_memory_resources` 测试通过。另按 `chapters/ch04-memory-resources/examples` 独立配置、构建并运行 CTest，1/1 通过。计时口径和该次测量值见 [第 4 章验证记录](../chapters/ch04-memory-resources/results/validation.md)。

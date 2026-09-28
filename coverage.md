@@ -26,7 +26,7 @@
 | 20 测试、部署与性能回归 | [正式第 20 章](chapters/ch20-testing-deployment/README.md)；[根 CTest](CMakeLists.txt) | 报告脚本在 zyk 实测；memcheck 缺工具而正确失败，性能基线与跨机器部署未测 |
 | 21 像素、通道与布局 | [正式第 21 章](chapters/ch21-image-layout/README.md)；[公共 PNM 头文件](chapters/common/image_io.hpp) | ROI、RGB/BGR/RGBA 与行填充逐字节 CPU 对照通过；仅测教学 PNM 格式 |
 | 22 均值与高斯滤波 | [正式第 22 章](chapters/ch22-mean-gaussian/README.md)；[pilot 均值](pilot/ch05-image-filtering/README.md) | 三种边界、直接/可分离高斯和共享 Halo 共 18 组通过 CPU 对照；性能未建立可信基线 |
-| 23 去噪与质量评价 | [现有第 5 章中值去噪](pilot/ch05-image-filtering/README.md) | 更多噪声模型与质量指标 |
+| 23 去噪与质量评价 | [正式第 23 章](chapters/ch23-denoising/README.md)；[pilot 中值](pilot/ch05-image-filtering/README.md) | 两种噪声、三种滤波通过 CPU 对照；PSNR/SSIM8 仅当前样本，不含无参考评价 |
 | 24 插值与几何重采样 | [现有第 6 章](pilot/ch06-image-resampling/README.md) | 一般几何变换与边界策略 |
 | 25 边缘、形态学、对比度 | 无 | 全章 |
 | 26 图像处理流水线 | [现有第 7 章](pilot/ch07-image-pipeline/README.md) | 多算子图像质量和真实吞吐量对照 |

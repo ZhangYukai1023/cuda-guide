@@ -1,0 +1,9 @@
+salt-pepper input PSNR=16.375 dB SSIM8=0.318765
+salt-pepper-median3 CPU_max_error=0 beyond_tolerance=0 PSNR=31.169 dB SSIM8=0.916011 kernel_ms=0.0360 task_ms=0.0811 PASS
+salt-pepper-gaussian5 CPU_max_error=0 beyond_tolerance=0 PSNR=23.409 dB SSIM8=0.536373 kernel_ms=0.0159 task_ms=0.0339 PASS
+salt-pepper-bilateral5 CPU_max_error=0 beyond_tolerance=0 PSNR=16.539 dB SSIM8=0.242048 kernel_ms=0.0164 task_ms=0.0304 PASS
+gaussian-noise input PSNR=23.157 dB SSIM8=0.649635
+gaussian-noise-median3 CPU_max_error=0 beyond_tolerance=0 PSNR=26.461 dB SSIM8=0.708494 kernel_ms=0.0072 task_ms=0.0207 PASS
+gaussian-noise-gaussian5 CPU_max_error=0 beyond_tolerance=0 PSNR=25.487 dB SSIM8=0.635547 kernel_ms=0.0038 task_ms=0.0151 PASS
+gaussian-noise-bilateral5 CPU_max_error=0 beyond_tolerance=0 PSNR=27.455 dB SSIM8=0.769630 kernel_ms=0.0080 task_ms=0.0190 PASS
+chapter 23 denoising: PASS

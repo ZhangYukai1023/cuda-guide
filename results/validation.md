@@ -217,3 +217,9 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 2026-09-28 第 19 章独立配置、构建、设备链接与 CTest 1/1 通过；1003 项和 7 项仿射变换通过 CPU 对照，重复入队、超容量和零长度接口按预期处理。根 `build/outline` 重新配置、全目标构建与完整 CTest 33 项中 32 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.20 秒。详见[章节记录](../chapters/ch19-cuda-project/results/validation.md)。
 
 静态库设备链接已实测；Driver API、NVRTC 和动态库仅在正文说明位置，未实现或验证。
+
+## 第 20 章交付脚本验证
+
+2026-09-28 在 `9af9358` 上运行第 20 章 Python 报告脚本：构建、完整 CTest 与第 12 章基准采集的 JSON 报告为 `ok=true`，CTest 33 项中 32 项通过、1 项双 GPU 用例跳过；另把 memcheck 设为必需，因 `compute-sanitizer` 缺失，报告正确给出 `ok=false` 与失败退出码。详见[章节记录](../chapters/ch20-testing-deployment/results/validation.md)。
+
+基准采集时 GPU 有并发任务，未建立可信性能基线；没有第二部署环境。该脚本不新增 CMake/CTest 目标，根工程测试数量仍为 33 项。

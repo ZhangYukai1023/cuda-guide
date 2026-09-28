@@ -205,3 +205,9 @@ cuBLAS 开发库缺失，SGEMM 分支未编译或运行；性能测量时 GPU �
 2026-09-28 第 17 章独立配置、构建和 CTest 1/1 通过；十批在 1、2、4 槽模式下的全部元素与 CPU 参考一致，跨 Stream 合并值为 10、19、34。根 `build/outline` 重新配置、全目标构建与完整 CTest 31 项中 30 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.00 秒。原始墙钟输出与限制见[章节记录](../chapters/ch17-stream-pipeline/results/validation.md)。
 
 GPU 上有其他任务，Nsight Systems 不可用。当前不能依据墙钟差异宣称 H2D、kernel、D2H 实际重叠或获得稳定加速。
+
+## 第 18 章加入后的验证
+
+2026-09-28 第 18 章独立配置、构建和 CTest 1/1 通过；普通提交、Graph 重放及流顺序分配路径均通过 CPU 逐项对照。根 `build/outline` 重新配置、全目标构建与完整 CTest 32 项中 31 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.07 秒。原始计时与限制见[章节记录](../chapters/ch18-graphs-memory-pool/results/validation.md)。
+
+Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不作稳定性能结论；内存池只验证生命周期，未测分配开销收益。

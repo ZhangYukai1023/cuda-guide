@@ -66,4 +66,4 @@ ctest --test-dir build/outline -R '^ch09_correctness_validation$' --output-on-fa
 4. 为本章再加两个边界输入。答例：整数全零与常量数组；浮点使用最大有限值与接近零的数，并单独规定溢出时是否预期 Inf。
 5. 若程序公开接受 `int length`，怎样处理 `-1`？答：先检查 `length<0` 并报参数错误，再转换为 `std::size_t`；不能直接强转后分配。
 
-下一章使用调试工具为故障保存复现输入、定位证据与修复后的验证结果。
+[下一章](../ch10-debugging/README.md)使用调试工具为故障保存复现输入、定位证据与修复后的验证结果。

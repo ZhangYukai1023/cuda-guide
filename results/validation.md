@@ -157,3 +157,9 @@ The following tests did not run:
 2026-09-28 同步第 9 章后，`build/ch09-correctness-standalone` 独立配置、构建、CTest 1/1 通过；手动运行空输入、长度 1/7/1003/4097、固定种子浮点、NaN/Inf、舍入顺序、半精度往返与大逻辑下标检查，结果见[章节记录](../chapters/ch09-correctness-validation/results/validation.md)。
 
 根 `build/outline` 重新配置、全目标构建及完整 CTest 通过：21 项中 20 项通过、0 项失败、1 项双卡测试因设备不足跳过，退出码 0，总时间 3.61 秒。章节容差只用于当前数据与运算，不宣称一般数值精度保证。
+
+## 第 10 章加入后的验证
+
+2026-09-28 第 10 章 Release/Debug 独立配置、构建及安全模式 CTest 分别 1/1 通过；Debug CMake 已修复 `-G` 与 `-lineinfo` 冲突。根 `build/outline` 重新配置、全目标构建和完整 CTest 通过：22 项中 21 项通过、0 项失败、1 项双卡测试因设备不足跳过，退出码 0，总时间 3.78 秒。
+
+当前环境没有可用的 Compute Sanitizer 或 CUDA-GDB，故障模式与单步定位**未测**。常规回归只包含 `safe` 模式，详见[章节记录](../chapters/ch10-debugging/results/validation.md)。

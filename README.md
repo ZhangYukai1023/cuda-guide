@@ -15,6 +15,7 @@
 | [第 7 章：共享内存与同步](chapters/ch07-shared-memory/README.md) | 块内交换、Warp 同步、分块转置与块内求和 | CPU 对照通过 |
 | [第 8 章：归约、原子操作和基础并行模式](chapters/ch08-reduction-atomics/README.md) | 两阶段求和、最大值位置、16 桶直方图 | CPU 对照通过 |
 | [第 9 章：正确性与数值验证](chapters/ch09-correctness-validation/README.md) | 边界、浮点容差、非有限值与大逻辑下标 | CPU 对照通过 |
+| [第 10 章：调试工具与故障定位](chapters/ch10-debugging/README.md) | 安全基线、四类故障复现入口 | 安全模式通过；工具检查未测 |
 
 其余大纲章节正在编写。逐章现有素材与缺口见 [覆盖核对](coverage.md)。
 
@@ -54,6 +55,7 @@ cuda-guide/
     ch07-shared-memory/
     ch08-reduction-atomics/
     ch09-correctness-validation/
+    ch10-debugging/
   pilot/
     ch02-thread-indexing/
     ...

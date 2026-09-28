@@ -2,7 +2,7 @@
 
 本章目标：分清 CPU、GPU、驱动和编译器的职责，查询一块 CUDA 设备，并亲手完成一次可以用 CPU 核对的 GPU 计算。读者只需了解 C++ 函数、数组、指针和基本循环。暂时不需要理解共享内存、warp、异步流水线或多 GPU。
 
-本章示例在当前服务器实际验证。原始大纲未能取得，经用户授权直接编写；用户后续已授权连续编写，全书导航见 [项目首页](../../README.md)。
+本章示例在当前服务器实际验证。原始大纲现已保存为 [outline.md](../../outline.md)；本章依据该大纲核对，现有全书仍是压缩初版。全书导航见 [项目首页](../../README.md)。
 
 ## 1. 从八次加法开始
 
@@ -80,6 +80,16 @@ command -v compute-sanitizer cuda-gdb nsys ncu gdb
 有三个容易混淆的数字：驱动版本 595.84、Toolkit 版本 12.8、计算能力 12.0。它们分别描述驱动、开发工具和 GPU 架构。另一个数字是 `nvidia-smi` 顶部显示的 CUDA Version 13.2；它表示驱动支持的 CUDA 版本信息，不能用来证明已经安装 Toolkit 13.2。本机 Toolkit 版本依据是实际 nvcc 输出。
 
 本机 nvcc 不在默认 PATH 中，使用绝对路径即可，无需修改系统配置。GPU 查询显示计算能力 12.0，nvcc 支持列表包含 `sm_120`，所以选择 `-arch=sm_120`。这项选择也已通过真实构建和运行验证。换一台 GPU 后，应重新查询架构，不要照抄 120。
+
+### 远程服务器上的实验位置
+
+本机通过 SSH 别名 `zyk` 连接到实际主机 `ubuntu2404`。这个别名是本机 SSH 配置，不是 CUDA 的通用命令；其他读者应使用自己的服务器地址和账户。可以从本机先检查远程目录与 GPU：
+
+```bash
+ssh zyk 'hostname; cd /data2/cuda-guide && pwd; nvidia-smi --query-gpu=name,compute_cap --format=csv,noheader'
+```
+
+本次实际返回主机名 `ubuntu2404`、目录 `/data2/cuda-guide` 和 GPU `NVIDIA GeForce RTX 5060 Ti, 12.0`。本机的 `/Users/zhangyukai/Documents/开发` 与服务器的 `/data2/cuda-guide` 是不同文件系统；在本机找到源码，不等于服务器已经有该文件。下面的 `nvcc`、CMake 和运行命令都应在有 GPU 的服务器上执行。编辑器可以通过 SSH 打开远程项目，也可以将文件明确复制到远程目录后再构建。
 
 本章参数还有：
 

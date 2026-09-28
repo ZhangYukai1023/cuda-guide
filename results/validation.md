@@ -199,3 +199,9 @@ The following tests did not run:
 2026-09-28 第 16 章独立配置、构建和 CTest 1/1 通过；三个形状上的朴素、共享分块和双输出 GEMM 共 9 个 GPU 结果均与 CPU double 参考符合。根 `build/outline` 重新配置、全目标构建与完整 CTest 30 项中 29 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 2.86 秒。完整 stdout 与限制见[章节记录](../chapters/ch16-matmul-case/results/validation.md)。
 
 cuBLAS 开发库缺失，SGEMM 分支未编译或运行；性能测量时 GPU 有并发任务，当前时间不能用于可信的手写版本排名，也没有库对照结论。
+
+## 第 17 章加入后的验证
+
+2026-09-28 第 17 章独立配置、构建和 CTest 1/1 通过；十批在 1、2、4 槽模式下的全部元素与 CPU 参考一致，跨 Stream 合并值为 10、19、34。根 `build/outline` 重新配置、全目标构建与完整 CTest 31 项中 30 项通过、0 项失败，1 项双 GPU 用例因单卡跳过，总时间 3.00 秒。原始墙钟输出与限制见[章节记录](../chapters/ch17-stream-pipeline/results/validation.md)。
+
+GPU 上有其他任务，Nsight Systems 不可用。当前不能依据墙钟差异宣称 H2D、kernel、D2H 实际重叠或获得稳定加速。

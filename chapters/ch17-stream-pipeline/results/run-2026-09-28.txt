@@ -1,0 +1,4 @@
+batches=10 items_per_batch=65536 slots=1 wall_median_ms=0.5358 merge_sum=10.0 mismatches=0 PASS
+batches=10 items_per_batch=65536 slots=2 wall_median_ms=0.3165 merge_sum=19.0 mismatches=0 PASS
+batches=10 items_per_batch=65536 slots=4 wall_median_ms=0.2930 merge_sum=34.0 mismatches=0 PASS
+chapter 17 stream pipeline: PASS

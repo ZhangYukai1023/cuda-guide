@@ -20,7 +20,7 @@
 | 14 访存优化 | [正式第 14 章](chapters/ch14-memory-optimization/README.md) | 朴素与两种共享转置均通过 CPU 对照；GPU 有并发任务，性能结论待空闲复测，Nsight 指标未测 |
 | 15 执行效率与资源取舍 | [正式第 15 章](chapters/ch15-execution-resources/README.md) | 求和与直方图 24 组均通过 CPU 对照；预测 Occupancy 非实测活跃度，性能待空闲复测 |
 | 16 矩阵乘优化贯穿案例 | [正式第 16 章](chapters/ch16-matmul-case/README.md)；[pilot GEMM](pilot/ch08-ai-operators/README.md) | 三种手写版本通过 CPU 对照；cuBLAS 缺开发库未测，性能待空闲复测 |
-| 17 Stream、Event 与流水线 | [现有第 7 章](pilot/ch07-image-pipeline/README.md) | 明确重叠条件与时间线证据 |
+| 17 Stream、Event 与流水线 | [正式第 17 章](chapters/ch17-stream-pipeline/README.md)；[pilot 流水线](pilot/ch07-image-pipeline/README.md) | 1/2/4 槽正确性与事件依赖通过；Nsight 缺失，实际重叠时间线未测 |
 | 18 CUDA Graphs 与内存池 | 无 | 全章 |
 | 19 组织 CUDA C++ 工程 | [现有 CMake 工程](CMakeLists.txt) | 模块化、接口、独立构建与分发 |
 | 20 测试、部署与性能回归 | [现有 CTest](CMakeLists.txt) | 回归基线、部署矩阵与验收流程 |

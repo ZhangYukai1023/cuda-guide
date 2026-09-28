@@ -139,3 +139,9 @@ The following tests did not run:
 2026-09-28 在 `codex/align-outline-38` 分支上重新配置并构建 `build/outline` 全目标，命令退出码均为 0。完整运行 `ctest --test-dir build/outline --output-on-failure --timeout 120`，退出码 0：18 项测试中 17 项通过、0 项失败、1 项 `ch10_two_devices` 因仅一张 GPU 跳过；新增 `ch06_memory_layout` 通过，总时间 3.28 秒。此前一次 CTest 在第 2 项期间因 SSH/TCP 失联中断，未用作通过证据。
 
 第 6 章另在 `build/ch06-layout-standalone` 独立配置、构建、运行 CTest，1/1 通过；手动运行可执行文件，连续/跨步、行跨度、AoS/SoA、显式传输和 Managed 11 行 CPU 对照均为 `mismatches=0 PASS`，详情见[本章验证记录](../chapters/ch06-memory-layout/results/validation.md)。没有测量缓存、带宽或页面迁移；没有安装新工具。
+
+## 第 7 章加入后的验证
+
+2026-09-28 同步第 7 章草稿后，在 `build/ch07-shared-standalone` 独立配置、构建并运行 CTest，1/1 通过；手动运行 8 线程/Warp 反转、3×2/1×1/31×17 分块转置和四种长度的块内求和，均与 CPU 参考完全一致（`mismatches=0`）。[章节记录](../chapters/ch07-shared-memory/results/validation.md)保留输出与限制。
+
+根 `build/outline` 重新配置并全目标构建，完整 CTest 19 项中 18 项通过、1 项双卡测试因设备不足跳过、0 项失败，退出码 0，总时间 3.39 秒。当前未找到 Compute Sanitizer，坏例子工具检查与性能分析均未测。

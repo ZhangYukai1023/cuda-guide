@@ -12,6 +12,7 @@
 | [第 4 章：管理数据、内存和资源](chapters/ch04-memory-resources/README.md) | 平方、多轮缓冲区复用、打包传输 | CPU 对照通过 |
 | [第 5 章：执行模型与 Warp](chapters/ch05-warp-execution/README.md) | Warp/lane、统一与奇偶分支、输入分布 | CPU 对照通过 |
 | [第 6 章：内存层次与数据布局](chapters/ch06-memory-layout/README.md) | 连续/跨步、行跨度、AoS/SoA、Managed | CPU 对照通过 |
+| [第 7 章：共享内存与同步](chapters/ch07-shared-memory/README.md) | 块内交换、Warp 同步、分块转置与块内求和 | CPU 对照通过 |
 
 其余大纲章节正在编写。逐章现有素材与缺口见 [覆盖核对](coverage.md)。
 
@@ -48,6 +49,7 @@ cuda-guide/
     ch04-memory-resources/
     ch05-warp-execution/
     ch06-memory-layout/
+    ch07-shared-memory/
   pilot/
     ch02-thread-indexing/
     ...

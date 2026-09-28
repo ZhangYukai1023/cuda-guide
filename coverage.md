@@ -10,7 +10,7 @@
 | 4 管理数据、内存和资源 | [正式第 4 章](chapters/ch04-memory-resources/README.md) | 平方、复用与打包已完成；更多传输规模对照可扩展 |
 | 5 执行模型与 Warp | [正式第 5 章](chapters/ch05-warp-execution/README.md) | 正确性与谓词分布已验证；性能分析后置 |
 | 6 内存层次与数据布局 | [正式第 6 章](chapters/ch06-memory-layout/README.md) | 连续/跨步、行跨度、AoS/SoA 与 Managed 已验证；性能分析后置 |
-| 7 共享内存与同步 | [现有第 3 章转置示例](pilot/ch03-memory-and-synchronization/README.md) | 块内求和与同步故障定位 |
+| 7 共享内存与同步 | [正式第 7 章](chapters/ch07-shared-memory/README.md) | 块内交换、Warp 同步、分块转置、块内求和均已通过 CPU 对照；故障工具检查未测 |
 | 8 归约、原子操作和基础模式 | [现有第 8 章部分归约](pilot/ch08-ai-operators/README.md) | 独立归约、原子、直方图、Scan |
 | 9 正确性与数值验证 | [公共验证代码](common/cuda_support.cuh) | 误差顺序、NaN/Inf、随机与极端输入 |
 | 10 调试工具与故障定位 | [现有第 4 章工具说明](pilot/ch04-engineering-and-timing/README.md) | 最小故障示例；工具缺失时如实注明未测 |

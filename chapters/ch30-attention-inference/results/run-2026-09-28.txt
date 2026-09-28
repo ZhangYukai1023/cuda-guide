@@ -1,0 +1,19 @@
+explicit_scores_softmax_pv sequence=5 causal=0 max_abs_error=2.980232e-08 bad=0 kernel_ms=0.1082 PASS
+online_tiled_forward sequence=5 causal=0 max_abs_error=4.470348e-08 bad=0 kernel_ms=0.0137 PASS
+sequence=5 explicit_score_probability_bytes=200 online_key_tile=16 PASS
+explicit_scores_softmax_pv sequence=5 causal=1 max_abs_error=2.980232e-08 bad=0 kernel_ms=0.0088 PASS
+online_tiled_forward sequence=5 causal=1 max_abs_error=5.960464e-08 bad=0 kernel_ms=0.0138 PASS
+sequence=5 explicit_score_probability_bytes=200 online_key_tile=16 PASS
+explicit_scores_softmax_pv sequence=17 causal=1 max_abs_error=2.980232e-08 bad=0 kernel_ms=0.0074 PASS
+online_tiled_forward sequence=17 causal=1 max_abs_error=5.960464e-08 bad=0 kernel_ms=0.0145 PASS
+sequence=17 explicit_score_probability_bytes=2312 online_key_tile=16 PASS
+explicit_scores_softmax_pv sequence=65 causal=0 max_abs_error=1.117587e-08 bad=0 kernel_ms=0.0082 PASS
+online_tiled_forward sequence=65 causal=0 max_abs_error=9.313226e-09 bad=0 kernel_ms=0.0470 PASS
+sequence=65 explicit_score_probability_bytes=33800 online_key_tile=16 PASS
+explicit_scores_softmax_pv sequence=65 causal=1 max_abs_error=2.980232e-08 bad=0 kernel_ms=0.0087 PASS
+online_tiled_forward sequence=65 causal=1 max_abs_error=5.960464e-08 bad=0 kernel_ms=0.0434 PASS
+sequence=65 explicit_score_probability_bytes=33800 online_key_tile=16 PASS
+explicit_scores_softmax_pv sequence=17 causal=1 max_abs_error=2.327561e-05 bad=0 kernel_ms=0.0068 PASS
+online_tiled_forward sequence=17 causal=1 max_abs_error=2.324581e-05 bad=0 kernel_ms=0.0145 PASS
+sequence=17 explicit_score_probability_bytes=2312 online_key_tile=16 PASS
+chapter 30 attention forward: PASS

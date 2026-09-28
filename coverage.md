@@ -33,7 +33,7 @@
 | 27 PyTorch 自定义算子 | [正式第 27 章](chapters/ch27-pytorch-custom-op/README.md) | 在现有 PyTorch 2.13/CUDA 13 环境以 nvcc 12.8 独立构建并通过前向、梯度、非连续输入、当前 Stream 和 opcheck；跨版本未测 |
 | 28 Softmax 与归一化 | [正式第 28 章](chapters/ch28-softmax-normalization/README.md)；[pilot Softmax](pilot/ch08-ai-operators/README.md) | FP32 三算子和 FP16/BF16 Softmax 通过 CPU 对照；低精度 LayerNorm/RMSNorm 与框架对照未实现 |
 | 29 Tensor Core、GEMM、CUTLASS | [正式第 29 章](chapters/ch29-tensor-core-cutlass/README.md)；[pilot GEMM](pilot/ch08-ai-operators/README.md) | 朴素与 WMMA 数值对照通过；cuBLAS 开发库和 CUTLASS 缺失，实际指令与性能未验证 |
-| 30 Attention 与推理 | 无 | 全章 |
+| 30 Attention 与推理 | [正式第 30 章](chapters/ch30-attention-inference/README.md) | 显式/在线前向六组输入通过 CPU 对照；框架对照、反向、KV Cache、量化与高性能实现未做 |
 | 31 线性代数与稀疏求解 | 无 | 全章 |
 | 32 FFT 与频域计算 | 无 | 全章 |
 | 33 Stencil、PDE、热传导 | [现有第 9 章](pilot/ch09-scientific-computing/README.md) | 更完整的稳定性、边界与误差分析 |

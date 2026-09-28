@@ -13,3 +13,4 @@ add_subdirectory(pilot/ch09-scientific-computing/examples ch09)
 add_subdirectory(pilot/ch10-multi-gpu/examples ch10)
 
 add_subdirectory(chapters/ch02-first-thread/examples book_ch02)
+add_subdirectory(chapters/ch03-array-indexing/examples book_ch03)

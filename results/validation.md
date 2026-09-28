@@ -121,3 +121,7 @@ The following tests did not run:
 正式章节已建立第 1、2 章，原压缩版示例保存在 `pilot/`。使用新的 `build/outline` 目录完成配置与全目标构建，退出码均为 0。`ctest --test-dir build/outline --output-on-failure` 实测 14 项：13 项通过，1 项双 GPU 测试因仅一块可见 GPU 跳过，0 项失败。正式第 2 章的 `ch02_first_threads` 通过。
 
 另按 `chapters/ch02-first-thread/examples` 独立配置、构建并运行 CTest，1/1 通过。第 2 章程序与 CPU 预期结果的详细输出见 [该章验证记录](../chapters/ch02-first-thread/results/validation.md)。
+
+## 第 3 章加入后的验证
+
+重新构建并运行 `ctest --test-dir build/outline --output-on-failure`，实测 15 项：14 项通过，1 项双 GPU 测试跳过，0 项失败。新增 `ch03_array_indexing` 测试通过。另按 `chapters/ch03-array-indexing/examples` 独立配置、构建并运行 CTest，1/1 通过。第 3 章的整数 CPU 对照记录见 [该章验证记录](../chapters/ch03-array-indexing/results/validation.md)。

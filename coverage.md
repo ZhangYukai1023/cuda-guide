@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | 1 认识 CUDA，准备环境 | [正式第 1 章](chapters/ch01-getting-started/README.md) | 官方示例来源仍可补充；远程流程已核对 |
 | 2 从一个 GPU 线程开始 | [正式第 2 章](chapters/ch02-first-thread/README.md) | 基础章节已完成；后续可加边界与故障练习 |
-| 3 从线程编号到数组计算 | [现有第 2 章下标示例](pilot/ch02-thread-indexing/README.md) | 整理成独立章节并补边界练习 |
+| 3 从线程编号到数组计算 | [正式第 3 章](chapters/ch03-array-indexing/README.md) | 一维与二维基础已完成；可扩展更大索引范围 |
 | 4 管理数据、内存和资源 | [现有第 4 章](pilot/ch04-engineering-and-timing/README.md) | 传输合并、资源复用的递进实验 |
 | 5 执行模型与 Warp | 无 | 全章 |
 | 6 内存层次与数据布局 | [现有第 3 章](pilot/ch03-memory-and-synchronization/README.md) | AoS/SoA、跨步访问、Unified Memory 对照 |

@@ -95,4 +95,4 @@ write_ids: got=0,1,2,3,4,5,6,7 PASS
 3. 若要写 16 个编号，除了 `<<<1,16>>>` 还要改什么？答：把设备申请与 Host 数组容量改为 16 个 `int`，把复制字节数和 CPU 验证循环范围都改为 16；不能只改启动参数。
 4. 为什么本章可以在 `run` 失败后释放设备指针？答：`main` 先调用 `run(device)` 保存结果，再无条件调用 `cudaFree(device)`，最后根据两项状态决定退出码。
 
-本章完成了从 Host 到单线程 Device、再回到 Host 的完整闭环。下一章会用 `blockIdx.x * blockDim.x + threadIdx.x` 让多个块共同处理任意长度的数组。
+本章完成了从 Host 到单线程 Device、再回到 Host 的完整闭环。[下一章](../ch03-array-indexing/README.md)会用 `blockIdx.x * blockDim.x + threadIdx.x` 让多个块共同处理任意长度的数组。

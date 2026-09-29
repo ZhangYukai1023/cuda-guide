@@ -1,0 +1,7 @@
+GPU=NVIDIA GeForce RTX 5060 Ti
+softmax max_abs_error=3.94312e-08 tolerance=2e-05
+layernorm max_abs_error=3.44437e-07 tolerance=3e-05
+GEMM max_abs_error=7.64627e-08 tolerance=4e-05
+softmax max_row_sum_error=7.46222e-08
+shape rows=7 cols=11 out_cols=5 chain_average_kernel_ms=0.00418592
+chapter 38 project B operators: PASS

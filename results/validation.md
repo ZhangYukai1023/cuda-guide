@@ -293,3 +293,7 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 ## 第 37 章加入后的验证
 
 2026-09-28 第 37 章以 sm_120 独立构建及 CTest 1/1 通过；通用和实际运行的 cp.async 两条路径在 1024、262144 元素上与 CPU 参考相符，ptxas 资源记录已保存。本次 Event 平均时间异步版没有更快，缺 SASS/Profiler 工具且有并发负载，不作稳定性能结论。根工程重新配置、全目标构建及 CTest 51 项中 49 项通过、0 项失败，第 10、35 章双 GPU 用例各 1 项跳过，总时间 17.42 秒。详见[章节记录](../chapters/ch37-architecture-optimization/results/validation.md)。
+
+## 第 38 章加入后的验证
+
+2026-09-28/29 第 38 章 B/C 独立构建和 CTest 2/2 通过；A 复用第 26 章验收六帧文件与哈希通过；D 因只有一张物理 GPU 以 77 SKIP，未作双卡验证。根工程重新配置、全目标构建及 CTest 53 项中 51 项通过、0 项失败，第 10、35 章双 GPU 用例各 1 项跳过，总时间 17.38 秒。A/D 脚本不计入这 53 项。各项目证据与限制见[章节记录](../chapters/ch38-integrated-projects/results/validation.md)。

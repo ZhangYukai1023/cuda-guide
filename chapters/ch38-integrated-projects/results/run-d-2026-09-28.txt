@@ -1,0 +1,1 @@
+SKIP project D: detected 1 physical GPU(s), requested 0,1

@@ -1,0 +1,3 @@
+GPU=NVIDIA GeForce RTX 5060 Ti
+size=67x51 steps=50 r=0.2 max_abs_error=1.34929e-07 sum_error=1.57983e-06 sum_tolerance=0.0186995 kernel_ms_single_run=2.27376
+chapter 38 project C heat: PASS

@@ -1,0 +1,1 @@
+chapter 38 project A: PASS frames=6 max_norm_error=5.94e-08 output=/data2/cuda-guide/build/ch38/project-a-run-20260928

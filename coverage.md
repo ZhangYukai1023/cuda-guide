@@ -41,6 +41,6 @@
 | 35 单机多 GPU | [正式第 35 章](chapters/ch35-multi-gpu/README.md)；[pilot 分片](pilot/ch10-multi-gpu/README.md) | CPU 分区自检通过；仅 1 GPU，单卡 kernel/双卡/P2P 路径均未运行 |
 | 36 多机通信与分布式 | [正式第 36 章](chapters/ch36-distributed-communication/README.md) | 2/3/5/7 rank 纯 C++ 分区自检通过；MPI/NCCL 缺依赖，GPU 通信与多节点未测 |
 | 37 架构相关高级优化 | [正式第 37 章](chapters/ch37-architecture-optimization/README.md) | sm_120 上通用与 cp.async 路径通过 CPU 对照；SASS、稳定性能、TMA/集群未测 |
-| 38 综合项目与交付验收 | 无 | 全章 |
+| 38 综合项目与交付验收 | [正式第 38 章](chapters/ch38-integrated-projects/README.md) | A 图像交付、B 算子链、C 热传导通过；D 仅一 GPU 而 SKIP，可信性能/跨机器部署未测 |
 
 当前可见 GPU 只有一张，Compute Sanitizer 与 Nsight 工具尚未找到。后续章节涉及这些设备或工具时，应将未验证的路径明确列出，不写成“通过”。

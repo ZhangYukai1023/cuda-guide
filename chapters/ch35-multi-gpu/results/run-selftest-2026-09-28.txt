@@ -1,0 +1,1 @@
+partition selftest: 4 images, 2 planned devices, 768 pixels/image, expected_sum=1952.68 PASS

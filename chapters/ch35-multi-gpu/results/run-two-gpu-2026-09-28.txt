@@ -1,0 +1,1 @@
+SKIP two-GPU path: found 1 CUDA device(s), requires 2

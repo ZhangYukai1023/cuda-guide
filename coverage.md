@@ -38,7 +38,7 @@
 | 32 FFT 与频域计算 | [正式第 32 章](chapters/ch32-fft-frequency/README.md) | 直接 DFT/低通/线性卷积通过参考对照；cuFFT 缺开发库，批处理、R2C 和二维库路径未测 |
 | 33 Stencil、PDE、热传导 | [正式第 33 章](chapters/ch33-stencil-heat/README.md)；[pilot 热扩散](pilot/ch09-scientific-computing/README.md) | 1D、2D 普通与 Halo 分块在整齐和尾网格通过 CPU 对照；时间分块与可信性能未做 |
 | 34 随机计算与粒子模拟 | [正式第 34 章](chapters/ch34-random-particles/README.md) | 同种子 Monte Carlo 命中数、积分与两种 193 粒子力通过 CPU 对照；RNG 质量/轨迹/性能未测 |
-| 35 单机多 GPU | [现有第 10 章](pilot/ch10-multi-gpu/README.md) | 真正双卡路径待具备设备时验证 |
+| 35 单机多 GPU | [正式第 35 章](chapters/ch35-multi-gpu/README.md)；[pilot 分片](pilot/ch10-multi-gpu/README.md) | CPU 分区自检通过；仅 1 GPU，单卡 kernel/双卡/P2P 路径均未运行 |
 | 36 多机通信与分布式 | 无 | 全章；需要多机环境验证 |
 | 37 架构相关高级优化 | 无 | 全章；仅报告本机可测部分 |
 | 38 综合项目与交付验收 | 无 | 全章 |

@@ -1,0 +1,5 @@
+GPU=NVIDIA GeForce RTX 5060 Ti
+Monte Carlo N=262144 seed=20260928 hits=205811 pi_estimate=3.14042663574 pi_abs_error=0.00116601784761 pi_SE_estimate=0.00320897135126
+integral[0,1] 4/(1+x^2): gpu=3.14383813196 cpu_same_samples=3.14383813196 gpu_cpu_error=3.8635761257e-14 integral_SE_estimate=0.00125653840498
+N-body n=193 softened pair model: naive_cpu_max_error=0.000152587890625 tiled_cpu_max_error=0.000152587890625 naive_tiled_max_error=0
+chapter 34 random and particles: PASS

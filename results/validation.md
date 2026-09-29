@@ -285,3 +285,7 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 ## 第 35 章加入后的验证
 
 2026-09-28 第 35 章独立构建及 CTest 2 项中 CPU 分区自检 1 项通过、双 GPU 用例 1 项因单卡 SKIP。根工程重新配置、全目标构建及 CTest 49 项中 47 项通过、0 项失败，第 10 章和第 35 章双 GPU 用例各 1 项 SKIP，总时间 16.52 秒。单卡基线 GPU kernel 与双卡/P2P 代码在设备数量门控之后，均未执行；细节见[章节记录](../chapters/ch35-multi-gpu/results/validation.md)。
+
+## 第 36 章加入后的验证
+
+2026-09-28 第 36 章纯 C++ 分区自检独立构建及 CTest 1/1 通过，四种 rank 数均覆盖 24 行恰好一次。MPI C++ 与 NCCL 开发依赖缺失，两类通信目标未构建。根工程重新配置、全目标构建及 CTest 50 项中 48 项通过、0 项失败，第 10、35 章双 GPU 用例各 1 项因单卡跳过，总时间 16.40 秒。多节点实测仍未完成，见[章节记录](../chapters/ch36-distributed-communication/results/validation.md)。

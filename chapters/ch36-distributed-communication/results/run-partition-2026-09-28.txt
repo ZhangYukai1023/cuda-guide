@@ -1,0 +1,4 @@
+ranks=2 rows covered exactly once: PASS
+ranks=3 rows covered exactly once: PASS
+ranks=5 rows covered exactly once: PASS
+ranks=7 rows covered exactly once: PASS

@@ -1,0 +1,12 @@
+GPU=NVIDIA GeForce RTX 5060 Ti compute_capability=12.0 generic_regs=14 generic_shared=0 async_regs=14 async_shared=1040 async_binary_version=120
+generic max_abs_error=5.96046e-08
+N=1024 generic_average_ms=0.00083776
+cp.async max_abs_error=5.96046e-08
+N=1024 generic_async_max_difference=0
+N=1024 cp_async_average_ms=0.00084736 observed_generic_over_async=0.988671
+generic max_abs_error=5.96046e-08
+N=262144 generic_average_ms=0.00228128
+cp.async max_abs_error=5.96046e-08
+N=262144 generic_async_max_difference=0
+N=262144 cp_async_average_ms=0.00275488 observed_generic_over_async=0.828087
+chapter 37 architecture optimization: PASS (cp.async may be SKIP)

@@ -289,3 +289,7 @@ Graph 与普通提交的本次墙钟记录发生在 GPU 有并发任务时，不
 ## 第 36 章加入后的验证
 
 2026-09-28 第 36 章纯 C++ 分区自检独立构建及 CTest 1/1 通过，四种 rank 数均覆盖 24 行恰好一次。MPI C++ 与 NCCL 开发依赖缺失，两类通信目标未构建。根工程重新配置、全目标构建及 CTest 50 项中 48 项通过、0 项失败，第 10、35 章双 GPU 用例各 1 项因单卡跳过，总时间 16.40 秒。多节点实测仍未完成，见[章节记录](../chapters/ch36-distributed-communication/results/validation.md)。
+
+## 第 37 章加入后的验证
+
+2026-09-28 第 37 章以 sm_120 独立构建及 CTest 1/1 通过；通用和实际运行的 cp.async 两条路径在 1024、262144 元素上与 CPU 参考相符，ptxas 资源记录已保存。本次 Event 平均时间异步版没有更快，缺 SASS/Profiler 工具且有并发负载，不作稳定性能结论。根工程重新配置、全目标构建及 CTest 51 项中 49 项通过、0 项失败，第 10、35 章双 GPU 用例各 1 项跳过，总时间 17.42 秒。详见[章节记录](../chapters/ch37-architecture-optimization/results/validation.md)。

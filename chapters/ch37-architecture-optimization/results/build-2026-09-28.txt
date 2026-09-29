@@ -1,0 +1,14 @@
+[ 50%] Building CUDA object CMakeFiles/async_stencil.dir/async_stencil.cu.o
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_ZN45_GLOBAL__N__0ad427d7_16_async_stencil_cu_main13async_stencilEPKfPfi' for 'sm_120'
+ptxas info    : Function properties for _ZN45_GLOBAL__N__0ad427d7_16_async_stencil_cu_main13async_stencilEPKfPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 14 registers, used 1 barriers, 1040 bytes smem
+ptxas info    : Compile time = 2.118 ms
+ptxas info    : Compiling entry function '_ZN45_GLOBAL__N__0ad427d7_16_async_stencil_cu_main15generic_stencilEPKfPfi' for 'sm_120'
+ptxas info    : Function properties for _ZN45_GLOBAL__N__0ad427d7_16_async_stencil_cu_main15generic_stencilEPKfPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 14 registers, used 0 barriers
+ptxas info    : Compile time = 0.979 ms
+[100%] Linking CUDA executable async_stencil
+[100%] Built target async_stencil

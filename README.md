@@ -47,6 +47,10 @@
 
 原大纲 38 章均有正式正文与示例；依赖、硬件或工具限制和未实现扩展逐章标明，见 [覆盖核对](coverage.md)。
 
+## 附录 A—H
+
+[附录导航](appendices/README.md)：[A C++ 基础](appendices/A-cpp-basics.md) · [B 数学](appendices/B-math-basics.md) · [C 术语/API/工具](appendices/C-glossary-api-tools.md) · [D 排错](appendices/D-troubleshooting.md) · [E 架构支持](appendices/E-architecture-support.md) · [F 实验报告模板](appendices/F-experiment-report-template.md) · [G 图像约定](appendices/G-image-conventions.md) · [H 答案索引与资料](appendices/H-answers-optimization-sources.md)。附录是速查和延伸阅读；可运行路径的状态以各章验证记录为准。
+
 ## 压缩初版（pilot）导航
 
 | 章节 | 内容 | 验证状态 |
@@ -121,6 +125,7 @@ cuda-guide/
     render_images.py
   results/
     validation.md
+  appendices/                 # 原大纲附录 A—H
   build/                       # Git 忽略的本机构建产物
 ```
 
@@ -168,7 +173,7 @@ pilot 提供可运行的入门应用示例，原大纲 38 章正文已按序集�
 
 本机未找到 Compute Sanitizer、cuda-gdb、nsys、ncu，因此没有内存/同步工具通过结论或 profiler 并发证明。只有一块可见 GPU，双卡路径、设备间通信和多卡性能未验证。第 12 章记录了多口径计时和 CPU 对照，但 GPU 被其他任务占用，可信性能基线仍待复测；第 13 章因缺工具还没有 profiler 报告。
 
-通过 SSH 别名 zyk 连接到实际主机 ubuntu2404。环境记录保留真实主机名。
+通过 SSH 连接到实际主机 ubuntu2404（别名 zyk 不稳定时使用 192.168.1.10）。环境记录保留真实主机名。
 
 已初始化本地 Git 仓库；未建立远程仓库。已有的 .vscode/、README.html 保留，不属于本次新增教材内容。
 
